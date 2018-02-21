@@ -22,8 +22,9 @@
 |description|text||
 |publisher|string||
 |released_on|date||
+|type|integer||
 |amazon_url|text|null: false|
-|author_id|integer|foreign_key: true|
+|author_id|references|foreign_key: true|
 
 #### Association
 - belongs_to :author
@@ -35,7 +36,6 @@
 |------|----|-------|
 |name|string|null: false|
 |nickname|string|null: false, index: true, unique: true|
-|name|string|null: false|
 |email|string|null: false|
 |gendar|integer|null: false|
 |birth_date|date|null: false|
@@ -78,6 +78,7 @@
 |description|text||
 |type|integer||
 |design|integer||
+|is_public|integer||
 
 #### Association
 - belongs_to :user
