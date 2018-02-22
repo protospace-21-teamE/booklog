@@ -31,7 +31,7 @@
 - has_many :reviews
 
 
-### Users Table
+### users Table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -51,7 +51,7 @@
 - has_one :shelf
 - has_many :shelfs, through: :follows
 
-### Reviews Table
+### reviews Table
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
@@ -70,7 +70,7 @@
 - has_many :tags, through: :tags_reviews
 - has_many :categories, through: :categories_reviews
 
-### Shelfs Table
+### shelfs Table
 |Column|Type|Options|
 |------|----|-------|
 |name|text||
@@ -84,7 +84,7 @@
 - belongs_to :user
 - has_many :users, through: :follows
 
-### Tags Table
+### tags Table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -92,7 +92,7 @@
 #### Association
 - has_may :reviews, through: :tags_reviews
 
-### Categories Table
+### categories Table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -102,16 +102,16 @@
 - belongs_to :user
 - has_many :reviews
 
-### Authors Table
+### authors Table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index: true|
 |description|text||
 
 #### Association
 - has_many :books
 
-### Tag_reviews Table
+### tags_reviews Table
 |Column|Type|Options|
 |------|----|-------|
 |tag_id|references|foreign_key: true|
@@ -121,7 +121,7 @@
 - belongs_to :tag
 - belongs_to :review
 
-### Category_reviews Table
+### categories_reviews Table
 |Column|Type|Options|
 |------|----|-------|
 |category_id|references|foreign_key: true|
