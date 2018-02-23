@@ -7,7 +7,7 @@
 - books
 - users
 - reviews
-- shelfs
+- shelves
 - tags
 - categories
 - authors
@@ -49,7 +49,7 @@
 - has_many :reviews
 - has_many :categories
 - has_one :shelf
-- has_many :shelfs, through: :follows
+- has_many :shelves, through: :follows
 
 ### reviews Table
 |Column|Type|Options|
@@ -70,7 +70,7 @@
 - has_many :tags, through: :tags_reviews
 - has_many :categories, through: :categories_reviews
 
-### shelfs Table
+### shelves Table
 |Column|Type|Options|
 |------|----|-------|
 |name|text||
@@ -130,3 +130,13 @@
 #### Association
 - belongs_to :category
 - belongs_to :review
+
+### follows Table
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|foreign_key: true|
+|shelf_id|references|foreign_key: true|
+
+#### Association
+- belongs_to :user
+- belongs_to :shelf
