@@ -13,6 +13,7 @@
 - authors
 - tags_reviews
 - categories_reviews
+- follows
 
 
 ### books Table
