@@ -10,5 +10,8 @@ class User < ApplicationRecord
   has_many :follows, dependent: :destroy
   has_many :shelves, through: :follows, dependent: :destroy
 
+  has_attached_file :avatar, styles: { medium: "120x120>", thumb: "90x90>" }
+  validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+
   validates :name, uniqueness: true
 end

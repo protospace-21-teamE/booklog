@@ -8,7 +8,6 @@ class AddColumnToUsers < ActiveRecord::Migration[5.0]
     add_column :users, :occupation, :string, null: true
     add_column :users, :prefecture, :string, null: true
     add_column :users, :home_town, :string, null: true
-    add_column :users, :avatar, :string, null: true
     add_column :users, :website_url, :string, null: true
   end
 end
