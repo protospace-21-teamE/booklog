@@ -1,0 +1,62 @@
+.body__wrapper.signin-body__wrapper
+  .header-wrapper.user-page__header
+    .header-nav
+      %a{href:"/", class: "header-nav__mini-icon"}
+  .user-page.signin-page
+    .user-page__content
+      .user-page__content--main
+        %h1 ログイン
+        %p
+          ようこそ、ブクログへ。 ブクログに登録している方は、下記からログインしてください。 まだ登録していない方は
+          %a{href: "/users/sign_up"}> こちらから登録
+          してください。登録は半熟たまごがゆであがるくらい（5分くらい）でできます。もちろん、無料です。
+        .signin-page__form
+          .signin-page__form__content
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              %dl.clearfix
+                %dt
+                  = f.label :name
+                %dd
+                  = f.text_field :name, autofocus: true, autocomplete: "name", class: "inputtext"
+              %dl.clearfix
+                %dt
+                  = f.label :password
+                %dd
+                  = f.password_field :password, autocomplete: "off", class: "inputtext"
+              .submit-area
+                = f.submit "ログイン", id: "btn"
+                %ul
+                  %li
+                    %a{href: "/users/sign_in"} ブクログIDを忘れた方
+                  %li
+                    %a{href: "/users/password/new"} パスワードを忘れた方
+        .signin-page__social.social-login-area
+          %h2 SNSアカウントでログイン
+          %ul.clearfix
+            %li
+              %a{href:"/login/twitter", class: "tw", id: "btn"}
+                %i.fa.fa-twitter
+                Twitterでログイン
+            %li
+              %a{href:"/login/facebook", class: "fb", id: "btn"}
+                %i.fa.fa-facebook-square
+                Facebookでログイン
+        .signin-page__signup
+          %h2 ブクログを新しくはじめる方はこちら
+          %a{href: "/users/sign_up", id: "btn"} 新規登録
+    .user-page__footer
+      %ul
+        %li.begin
+          %a{href: "/"} web本棚サービス ブクログ
+        %li
+          %a{href: "/signup"} 新規登録
+        %li
+          %a{href: "/about"} ブクログについて
+        %li
+          %a{href: "/special"} ブクログ特集
+        %li
+          %a{href: "http://info.booklog.jp"} お知らせブログ
+        %li
+          %a{href: "/contact"} お問い合わせ
+      %address Copyright © 2018 Booklog,Inc. All Rights Reserved.
+
