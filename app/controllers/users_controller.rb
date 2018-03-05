@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:edit, :update]
 
   def show
+    source = User.find(params[:id])
+    @user = UserDecorator.new(source)
   end
 
   def edit
