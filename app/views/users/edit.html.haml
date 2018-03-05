@@ -1,0 +1,255 @@
+.body-wrapper
+  .header-wrapper
+    .header-nav
+      %a.header-nav__mini-icon
+    .header-info-text
+      %ul
+        %li
+          %span.icon-new NEW
+          %a{href: ""} 3月1日刊、女性向け無料小冊子『東京暮らし防災』がすごい!?
+  .user-page.user-edit-page
+    .user-page__site-map
+      %ul.site-map__ul
+        %li.site-map__li
+          %a{href: "/"}
+            %span ブクログ
+          %span >
+        %li.site-map__ul
+          %span プロフィールの設定
+    .user-page__content
+      = render partial: "shared/side"
+      .user-page__content--main
+        %h1 プロフィールの設定
+        %p プロフィール、プロフィールタグ、お気に入りベスト３を設定します。
+        .user-edit-page__form
+          %h2 基本設定
+          .user-edit-page__form__content
+            = form_for @user do |f|
+              %table
+                %tbody
+                  %tr
+                    %th
+                      = f.label :name
+                    %td
+                      = f.text_field :name, autofocus: true, class: "inputtext"
+                  %tr
+                    %th
+                      = f.label :nickname
+                    %td
+                      = f.text_field :nickname, class: "inputtext"
+                  %tr
+                    %th
+                      = f.label :avatar
+                    %td
+                      %img{src: @user.avatar}
+                      = f.file_field :avatar, class: "inputtext avatar-input"
+                  %tr
+                    %th
+                      = f.label :description
+                    %td
+                      = f.text_area :description, class: "inputtext textarea--user-profile"
+                      %ul
+                        %li 1000文字以内 / HTMLタグ使用不可
+                  %tr
+                    %th
+                      = f.label :gender
+                    %td
+                      %label
+                        = f.radio_button :gender, "1"
+                        男性
+                      %label
+                        = f.radio_button :gender, "2"
+                        女性
+                      %label
+                        = f.radio_button :gender, "0"
+                        秘密
+                  %tr
+                    %th
+                      = f.label :birth_date
+                    %td
+                      != sprintf( |
+                        f.date_select(:birth_date, use_month_numbers: true, start_year: 1901, end_year: Time.now.year, order: [:year, :month, :day], date_separator: "%s"), "年 ", "月 ") + "日 " |
+                  %tr
+                    %th
+                      = f.label :occupation
+                    %td
+                      = f.text_field :occupation, placeholder: "書店員、大学生", class: "inputtext"
+                  %tr
+                    %th
+                      = f.label :prefecture
+                    %td
+                      - prefecture_47 = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県']
+                      - array = [["-",""]]
+                      - prefecture_47.each do |i|
+                        - array << [i, i]
+                      = f.select :prefecture, array, class: 'btn'
+                  %tr
+                    %th
+                      = f.label :home_town
+                    %td
+                      = f.text_field :home_town, placeholder: "例）渋谷、大名", class: "inputtext"
+                  %tr
+                    %th
+                      = f.label :website_url
+                    %td
+                      = f.text_field :website_url, placeholder: "http://booklog.jugem.jp", class: "inputtext"
+              .submit-area
+                = f.submit "プロフィールを更新する", id: "btn", class: "mode--user-edit"
+        .user-edit-page__form
+          %h2 プロフィールタグの設定
+          %br
+          %p
+            自分の好きなジャンルや作家を登録して、
+            %a{href: "#"}> ユーザー検索
+            で同じ趣味の本棚と出会いましょう。
+          .user-edit-page__form__content
+            %table
+              %tbody
+                %tr
+                  %th
+                    %label パーソナルタグ
+                    %br
+                    %span
+                      %a{href: "#"}>ユーザー検索
+                      の対象項目
+                  %td
+                    %textarea{class: "inputtext", placeholder: "例）女子大生 作家志望"}
+                    %ul
+                      %li
+                        例）
+                        %span
+                          %a{href: "#"} IT系
+                          %a{href: "#"} 作家志望
+                          %a{href: "#"} 歴女
+                          %a{href: "#"} デザイナー
+                          %a{href: "#"} AB型
+                          %a{href: "#"} イラストレーター
+                          %a{href: "#"} 主婦
+                          %a{href: "#"} マーケッター
+                          %a{href: "#"} こども本棚
+                          %a{href: "#"} オタク
+                          %a{href: "#"} ウェブディレクター
+                          %a{href: "#"} 美術部
+                          %a{href: "#"} 弓道部
+                          %a{href: "#"} 科学部
+                          %a{href: "#"} 犬好き
+                          %a{href: "#"} ゲーマー
+                          %a{href: "#"} 左利き
+                          %a{href: "#"} 女子大生
+                          %a{href: "#"} 農家
+                          %a{href: "#"} 宇宙飛行士
+                          %a{href: "#"} 事務職
+                          %a{href: "#"} メガネ
+                          %a{href: "#"} ライター
+                          %a{href: "#"} 先生
+                          %a{href: "#"} 編集者
+                          %a{href: "#"} 腐女子
+                          %a{href: "#"} 図書館
+                          %a{href: "#"} グルメライター
+                          %a{href: "#"} ブロガー
+                          %a{href: "#"} 文学青年
+                %tr
+                  %th
+                    %label 興味のあるジャンル
+                    %br
+                    %span
+                      %a{href: "#"}>ユーザー検索
+                      の対象項目
+                  %td
+                    %textarea{class: "inputtext", placeholder: "例）ライトノベル SF 少女漫画"}
+                    %ul
+                      %li
+                        例）
+                        %span
+                          %a{href: "#"} SF
+                          %a{href: "#"} ファンタジー
+                          %a{href: "#"} ミステリー
+                          %a{href: "#"} 歴女
+                          %a{href: "#"} 絵本
+                          %a{href: "#"} ホラー
+                          %a{href: "#"} ビジネス
+                          %a{href: "#"} ライトノベル
+                          %a{href: "#"} BL
+                          %a{href: "#"} アクション
+                          %a{href: "#"} 写真集
+                          %a{href: "#"} 妖怪
+                          %a{href: "#"} エッセイ
+                          %a{href: "#"} ノンフィクション
+                          %a{href: "#"} ほのぼの
+                          %a{href: "#"} 古典
+                          %a{href: "#"} 冒険
+                          %a{href: "#"} ４コマ
+                          %a{href: "#"} 洋書
+                          %a{href: "#"} 技術書
+                          %a{href: "#"} 宗教
+                          %a{href: "#"} 建築
+                          %a{href: "#"} 医療
+                          %a{href: "#"} 心理
+                          %a{href: "#"} ロック
+                %tr
+                  %th
+                    %label 好きな作家
+                    %br
+                    %span
+                      %a{href: "#"}>ユーザー検索
+                      の対象項目
+                  %td
+                    %textarea{class: "inputtext", placeholder: "例）伊坂幸太郎 東野圭吾 押井守"}
+                    %ul
+                      %li 好きな作家・監督・アーティストをスペース区切りで入力してください
+                      %li
+                        例)
+                        %span
+                          %a{href: "#"} 伊坂幸太郎
+                          %a{href: "#"} 東野圭吾
+                          %a{href: "#"} 押井守
+                          %a{href: "#"} ラーメンズ
+                          %a{href: "#"} 東京事変
+                          %a{href: "#"} 椎名林檎
+                          %a{href: "#"} 宮崎あおい
+                      %li
+                        %em 苗字と名前の間にスペースを入れると別々のタグとして登録されてしまいますのでご注意ください
+                      %li 例）「村上　春樹」と入力した場合、「村上」「春樹」の2つのタグが登録されます
+            .submit-area
+              %input{type: "submit", name: "commit", value: "プロフィールタグを更新する", id: "btn", class: "mode--user-edit"}
+        .user-edit-page__form
+          %h2 お気に入りベスト３の設定
+          %br
+          %p
+            お気に入りベスト３は、あなたの
+            %a{href:"#"} プロフィール
+            と
+            %a{href:"#"} みんなのベスト３
+            ページに表示されます。
+          .user-edit-page__form__content
+            %table
+              %tbody
+                %tr
+                  %th.best01
+                    %label 1位
+                  %td
+                    .input__title
+                      %em 未設定
+                    .best-change-btn
+                      %a{href:"#"} アイテム変更
+                %tr
+                  %th.best02
+                    %label 2位
+                  %td
+                    .input__title
+                      %em 未設定
+                    .best-change-btn
+                      %a{href:"#"} アイテム変更
+                %tr
+                  %th.best03
+                    %label 3位
+                  %td
+                    .input__title
+                      %em 未設定
+                    .best-change-btn
+                      %a{href:"#"} アイテム変更
+            .submit-area
+              %input{type: "submit", name: "commit", value: "ベスト3を更新する", id: "btn", class: "mode--user-edit"}
+    %aside.ad-footer
+      .ad-728-90
+  #footer

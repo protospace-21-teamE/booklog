@@ -1,0 +1,88 @@
+.body-wrapper
+  .header-wrapper
+    .header-nav
+      %a.header-nav__mini-icon
+    .header-info-text
+      %ul
+        %li
+          %span.icon-new NEW
+          %a{href:"#"} 3月1日刊、女性向け無料小冊子『東京暮らし防災』がすごい!?
+  .user-page.user-show-page
+    .user-page__site-map
+      %ul.site-map__ul
+        %li.site-map__li
+          %a{href: "/"}
+            %span ブクログ
+          %span >
+        %li.site-map__li
+          %a{href:"#"}
+            %span #{@user.name}さんの本棚
+          %span >
+        %li.site-map__ul
+          %span プロフィール
+    .user-page__content
+      = render partial: "shared/side"
+      .user-page__content--main
+        .user-wrapper
+        %p #{@user.birth_date}生まれの女性
+        .user-show-page__table
+          .user-show-page__table__content
+            %table
+              %tbody
+                %tr
+                  %th 名前
+                  %td #{@user.name}
+                %tr
+                  %th 本棚の名前
+                  %td
+                    %a{href: "#"} #{@user.name}の本棚
+                %tr
+                  %th 本棚の紹介文
+                  %td #{@user.description}
+                %tr
+                  %th 性別
+                  %td #{@user.gender}
+                %tr
+                  %th 生年月日
+                  %td #{@user.birth_date_subtype}
+                %tr
+                  %th 連携サービス
+                  %td
+        .user-show-page__section
+          %h3 プロフィール
+          %p
+            %a{href:"#"} 自己紹介を書く
+        .user-show-page__section
+          %h3 パーソナルタグ
+          %p
+            %a{href:"#"} パーソナルタグを設定する
+        .user-show-page__section
+          %h3 興味のあるジャンル
+          %p
+            %a{href:"#"} 興味のあるジャンルを設定する
+        .user-show-page__section
+          %h3 好きな作家など
+          %p
+            %a{href:"#"} 好きな作家を設定する
+        .user-show-page__section
+          %h3 お気に入りベスト3
+          %a{href:"#", class: "best3"}> みんなのベスト3
+          %table
+            %tbody
+              %tr
+                %th.best01 1
+                %td
+                  %a{href:"#"} 設定
+                %th.best02 2
+                %td
+                  %a{href:"#"} 設定
+                %th.best03 3
+                %td
+                  %a{href:"#"} 設定
+        .user-show-page__section
+          %h3 読書目標
+          %p
+            %a{href:"#"} 読書目標を設定する
+    %aside.ad-footer
+      .ad-728-90
+  #footer
