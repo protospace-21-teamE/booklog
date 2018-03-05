@@ -1,0 +1,108 @@
+.body-wrapper
+  .header-wrapper.user-page__header
+    .header-nav
+      %a{href:"/", class: "header-nav__mini-icon"}
+  .signup-page
+    .user-page__content
+      .user-page__content--main
+        %h1 ブクログの新規登録
+        %p.b40M
+          ブクログをはじめる方法は2つあります。
+          %br
+          どちらもコーヒーを淹れている間（5分くらい）でできます。もちろん、無料です。
+        .social-login-area
+          %h2 SNSアカウントでブクログをはじめる
+          %ul.clearfix
+            %li
+              %a{href:"/login/twitter", class: "tw", id: "btn"}
+                %i.fa.fa-twitter
+                Twitterで新規登録
+            %li
+              %a{href:"/login/facebook", class: "fb", id: "btn"}
+                %i.fa.fa-facebook-square
+                Facebookで新規登録
+        .signup-page__form
+          %h2 メールアドレスでブクログをはじめる
+          %p.txt-ess
+            %span> *
+            は必須項目です
+          .signup-page__form__content
+            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              %table
+                %tbody
+                  %tr.clearfix
+                    %th
+                      %span *
+                      = f.label :name
+                    %td
+                      = f.text_field :name, autofocus: true, class: "inputtext"
+                      %ul
+                        %li 半角英数字3~16文字
+                  %tr.clearfix
+                    %th
+                      %span *
+                      = f.label :nickname
+                    %td
+                      = f.text_field :nickname, class: "inputtext"
+                  %tr.clearfix
+                    %th
+                      %span *
+                      = f.label :password
+                    %td
+                      = f.password_field :password, autocomplete: "off", class: "inputtext"
+                      %ul
+                        %li 半角英数・記号5～16文字
+                  %tr.clearfix
+                    %td{colspan: "2", class: "signup__form--comment"}
+                      性別・生年月日はプロフィールとして公開いたします。
+                      %br
+                      ※登録後に公開設定を変更することが可能です。
+                      %br
+                      %br
+                      なお、ログイン情報を忘れてしまった場合、
+                      %br
+                      下記の情報で本人確認を行うため正しく入力してください。
+                  %tr.clearfix
+                    %th
+                      %span *
+                      = f.label :email
+                    %td
+                      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "連絡可能なメールアドレス", class: "inputtext"
+                  %tr.clearfix
+                    %th
+                      %span *
+                      = f.label :gender
+                    %td
+                      %label
+                        = f.radio_button :gender, "1", {checked: true}
+                        男性
+                      %label
+                        = f.radio_button :gender, "2", {}
+                        女性
+                  %tr
+                    %th
+                      %span *
+                      = f.label :birth_date
+                    %td
+                      != sprintf( |
+                        f.date_select(:birth_date, use_month_numbers: true, start_year: 1901, end_year: Time.now.year, order: [:year, :month, :day], date_separator: "%s"), "年 ", "月 ") + "日 " |
+              %p
+                %a{href: ""}> ブクログの利用規約
+                をお読みいただき、確認ページにお進みください。
+              .submit-area
+                = f.submit "規約に同意して確認ページに進む", id: "btn"
+    .user-page__footer
+      %ul
+        %li.begin
+          %a{href: "/"} web本棚サービス ブクログ
+        %li
+          %a{href: "/signup"} 新規登録
+        %li
+          %a{href: "/about"} ブクログについて
+        %li
+          %a{href: "/special"} ブクログ特集
+        %li
+          %a{href: "http://info.booklog.jp"} お知らせブログ
+        %li
+          %a{href: "/contact"} お問い合わせ
+      %address Copyright © 2018 Booklog,Inc. All Rights Reserved.

@@ -1,0 +1,114 @@
+.body-wrapper {
+  .user-page__header {
+    .header-nav {
+      position: relative;
+    }
+  }
+  .signup-page{
+    .user-page__content{
+      &--main {
+        margin: 40px auto 100px;
+        width: 600px;
+        float: none;
+        .b40M {
+          margin-bottom: 40px;
+        }
+        .signup-page__form{
+          h2 {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .txt-ess {
+            display: inline-block;
+            float: right;
+            font-size: 12px;
+            line-height: 1.9em;
+            margin: 0;
+          }
+          span {
+            color: #da4740;
+            font-size: 130%;
+            font-weight: bold;
+            margin-right: 3px;
+          }
+          &__content {
+            table {
+              background-color: #fff;
+              border-top: 5px #333 solid;
+              margin-bottom: 35px;
+              width: 100%;
+              tbody {
+                tr{
+                  border-bottom: 1px #cdcdcd solid;
+                  font-size: 13px;
+                  th {
+                    background-color: #e8f6f5;
+                    color: #656565;
+                    font-weight: bold;
+                    padding: 25px;
+                    text-align: left;
+                    width: 35%;
+
+                  }
+                  td {
+                    padding: 25px;
+                    position: relative;
+                    width: 65%;
+                    .inputtext {
+                      width: 320px;
+                    }
+                    ul {
+                      margin: 5px 10px 0 20px;
+                      li {
+                        color: #333;
+                        font-size: 11px;
+                        list-style: circle;
+                        margin-bottom: 3px;
+                      }
+                    }
+                  }
+                  .signup__form--comment {
+                    background-color: #f0f0f0;
+                    line-height: 1.4em;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    text-align: left;
+                  }
+                }
+              }
+            }
+            p {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .user-page__footer{
+    ul {
+      font-size: 12px;
+      padding-bottom: 12px;
+    }
+    li {
+      border-left: 1px solid #646464;
+      display: inline-block;
+      padding: 0 5px;
+      a {
+        color: #1e1e1e;
+        text-decoration: underline;
+      }
+    }
+    li.begin {
+      border-left: none;
+    }
+    address {
+      color: #1e1e1e;
+      display: block;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+}
