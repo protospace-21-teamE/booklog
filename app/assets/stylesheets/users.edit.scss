@@ -1,5 +1,5 @@
-.user-edit-page {
-  .user-page__content {
+.user-page {
+  &__content {
     &--main {
       .user-edit-page__form {
         @include clearfix();
