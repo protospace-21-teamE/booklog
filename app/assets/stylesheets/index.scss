@@ -24,9 +24,11 @@ button{
 // common
 
 //header style
+
 .header {
   width: 100%;
   height: 92px;
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
 
   .header__navbar {
     width: 100%;
@@ -64,12 +66,12 @@ button{
         float: left;
 
         .contents-link-button {
-          font-family: HiraginoSans-W4;
           font-size: 14px;
           color: #ffffff;
           cursor: pointer;
           text-decoration: none;
           float: left;
+
         }
 
         .contents-link-button:hover {
@@ -89,7 +91,6 @@ button{
         width: 268px;
         height: 32px;
         font-size: 13px;
-        font-family: HiraginoSans-W4;
         padding-left: 10px;
         border: none;
         border-width: 1px;
@@ -198,7 +199,6 @@ button{
         }
 
         .notification_message {
-          font-family: HiraginoSans-W4;
           text-decoration: underline;
           color: #656565;
           font-size: 12px;
@@ -223,12 +223,12 @@ button{
   width: 100%;
   background-color: #fefef7;
   position: absolute;
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
 
   .main-navbar {
     width: 980px;
     height: 16px;
     margin: 20px auto;
-    font-family: HiraginoSans-W7;
     font-size: 12px;
 
     .main-navbar__link {
@@ -252,7 +252,6 @@ button{
         background-color: white;
         border-radius: 3px;
         float: left;
-        font-family: HiraginoSans-W5;
         margin-bottom: 20px;
 
         .user-profile-wrapper {
@@ -409,7 +408,6 @@ button{
       }
       .description {
         font-size: 12px;
-        font-family: HiraginoSans-W4;
         margin-bottom: 20px;
       }
       .contents-search-form {
@@ -424,7 +422,6 @@ button{
         input {
           width: 230px;
           font-size: 14px;
-          font-family: HiraginoSans-W4;
           border: 1px #1e1e1e solid;
           border-radius: 3px;
           padding-left: 20px;
@@ -447,7 +444,6 @@ button{
       }
       .reading-status-title {
         font-size: 12px;
-        font-family: HiraginoSans-W4;
         margin-bottom: 20px;
       }
       .mybooks-by-reading-status {
@@ -463,7 +459,6 @@ button{
         border-bottom: 5px #1e1e1e solid;
         overflow: hidden;
         margin-bottom: 20px;
-        font-family: HiraginoSans-W5;
         li {
           display: inline-block;
           font-size: 12px;
@@ -488,7 +483,6 @@ button{
       }
 
       .timeline {
-        font-family: HiraginoSans-W5;
         width: 650px;
 
         .timeline-list {
@@ -610,7 +604,6 @@ button{
 
                     .review-footer {
                       height: 32px;
-                      background-color: #4ea6cc;
                       background: rgba(78, 166, 204, 0.1);
                       font-size: 12px;
 
@@ -714,7 +707,6 @@ button{
   }
 
   .footer {
-    font-family: HiraginoSans-W5;
     bottom: 0;
     height: 450px;
     background-color: #e4e4e4;
@@ -744,18 +736,21 @@ button{
             vertical-align: top;
             margin: 10px;
 
-            li {
-              font-size:10px;
-              margin: 3px;
-              color: #656565;
-
-              a{
+            ul {
+              li {
+                font-size:10px;
+                margin: 3px;
                 color: #656565;
-                text-decoration: none;
-               }
 
-              a:hover {
-                text-decoration: underline;
+                a{
+                  color: #656565;
+                  text-decoration: none;
+                 }
+
+                a:hover {
+                  text-decoration: underline;
+                }
+
               }
 
             }
