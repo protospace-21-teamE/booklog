@@ -1,7 +1,8 @@
-@import "./reset";
-@import "./font-awesome";
+@import "reset";
+@import "font-awesome";
 @import "./mixin/clearfix.scss";
 @import "./side.scss";
+@import "index";
 @import "./users.scss";
 @import "./users.signin.scss";
 @import "./users.signup.scss";
