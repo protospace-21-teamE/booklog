@@ -71,33 +71,35 @@
         table {
           background-color: #fff;
           margin-top: 5px;
-          tr {
-            border: 1px #cdcdcd solid;
-            th {
-              color: #fff;
-              font-weight: bold;
-              font-size: 12px;
-              padding: 0 4px;
-              text-align: center;
-            }
-            .best01 {
-              background-color: #da4740;
-            }
-            .best02 {
-              background-color: #f58c29;
-            }
-            .best03 {
-              background-color: #89c600;
-            }
-            td {
-              color: #cdcdcd;
-              font-size: 11px;
-              height: 52px;
-              padding: 5px 15px;
-              text-align: center;
-              width: 52px;
-              a {
+          tbody {
+            tr {
+              border: 1px #cdcdcd solid;
+              th {
+                color: #fff;
+                font-weight: bold;
+                font-size: 12px;
+                padding: 0 4px;
+                text-align: center;
+              }
+              .best01 {
+                background-color: #da4740;
+              }
+              .best02 {
+                background-color: #f58c29;
+              }
+              .best03 {
+                background-color: #89c600;
+              }
+              td {
+                color: #cdcdcd;
                 font-size: 11px;
+                height: 52px;
+                padding: 5px 15px;
+                text-align: center;
+                width: 52px;
+                a {
+                  font-size: 11px;
+                }
               }
             }
           }
