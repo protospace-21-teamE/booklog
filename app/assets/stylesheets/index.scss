@@ -89,6 +89,7 @@ button{
         width: 268px;
         height: 32px;
         font-size: 13px;
+        font-family: HiraginoSans-W4;
         padding-left: 10px;
         border: none;
         border-width: 1px;
@@ -408,6 +409,7 @@ button{
       }
       .description {
         font-size: 12px;
+        font-family: HiraginoSans-W4;
         margin-bottom: 20px;
       }
       .contents-search-form {
@@ -417,12 +419,12 @@ button{
           display: inline-block;
           margin: 10px;
           vertical-align: middle;
-          font-size: 14px;
           height: 30px;
         }
         input {
           width: 230px;
           font-size: 14px;
+          font-family: HiraginoSans-W4;
           border: 1px #1e1e1e solid;
           border-radius: 3px;
           padding-left: 20px;
@@ -436,6 +438,7 @@ button{
           border-radius: 3px;
           .search-icon {
             color: white;
+            font-size: 14px;
           }
         }
         .main-search-button:hover {
@@ -444,6 +447,7 @@ button{
       }
       .reading-status-title {
         font-size: 12px;
+        font-family: HiraginoSans-W4;
         margin-bottom: 20px;
       }
       .mybooks-by-reading-status {
