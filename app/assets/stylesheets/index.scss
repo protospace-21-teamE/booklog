@@ -1,0 +1,816 @@
+// initialize
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+h3 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        appearance: none;
+}
+
+
+// common
+
+//header style
+
+.header {
+  width: 100%;
+  height: 92px;
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+
+  .header__navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #8bafbf;
+
+    .header__navbar__logo {
+      width: 67px;
+      height: 60px;
+      float: left;
+
+      .logo-button {
+        width: 67px;
+        height: 60px;
+        margin-left: 20px;
+
+        .logo-image {
+          width: 52px;
+        }
+
+      }
+
+    }
+
+    .header__navbar__contents-links {
+      width: 280px;
+      height: 60px;
+      list-style: none;
+      line-height: 60px;
+      margin-left: 20px;
+      float: left;
+
+      .contents-link-list {
+        margin-right: 16px;
+        float: left;
+
+        .contents-link-button {
+          font-size: 14px;
+          color: #ffffff;
+          cursor: pointer;
+          text-decoration: none;
+          float: left;
+
+        }
+
+        .contents-link-button:hover {
+          opacity: 0.7;
+        }
+      }
+
+    }
+
+    .header__navbar__search-form, .header-search-form {
+      width: 280px;
+      height: 60px;
+      float: left;
+      line-height: 55px;
+
+      .search-field {
+        width: 268px;
+        height: 32px;
+        font-size: 13px;
+        padding-left: 10px;
+        border: none;
+        border-width: 1px;
+        border-color: #cdcdcd;
+        border-style: solid;
+        border-radius:3px;
+
+      }
+
+      .help-icon {
+        font-size: 1em;
+        position: absolute;
+        top: 21px;
+        left: 585px;
+        opacity: 0.2;
+      }
+
+      .search-button {
+      border: 1px #cdcdcd solid;
+      width: 40px;
+      height: 34px;
+      position: absolute;
+      top: 12px;
+      left: 607px;
+
+        .search-icon {
+          font-size: 1.5em;
+        }
+
+      }
+
+      .search-button:hover {
+        background-color: #4ea6cc;
+          .search-icon {
+            color: #fff;
+          }
+
+      }
+      
+
+    }
+
+    .dropdown-list {
+      height: 60px;
+      float: right;
+      margin-right: 17px;
+      line-height: 90px;
+
+      .header__navbar__user-links, .header__navbar__home, .header__navbar__shelf, .header__navbar__timeline, .header__navbar__useful-links {
+        float: right;
+        margin-right: 10px;
+        height: 60px;
+        line-height: 60px;
+      }
+
+      .menu-partition {
+        margin-left: 8px;
+        margin-right: 10px;
+        margin-top: 15px;
+        width: 8px;
+        height: 24px;
+        border-left: 1px #FFF solid;
+        float: right;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin-top: 12px;
+      }
+
+      a {
+
+        i {
+          color: #fff;
+          font-size: 25px;
+        }
+
+        i:hover {
+          opacity: 0.7;
+        }
+
+      }
+
+    }
+  }
+
+  .header__notification {
+    width: 100%;
+    height: 32px;
+    background-color: #f0f0f0;
+
+    .notification-message-wrapper {
+      width: 500px;
+      height: 32px;
+      margin: 0 auto;
+      text-align: center;
+
+      li {
+        height: 32px;
+        display: inline-block;
+        vertical-align: middle;
+
+        .notification_tag {
+          width: 40px;
+        }
+
+        .notification_message {
+          text-decoration: underline;
+          color: #656565;
+          font-size: 12px;
+          line-height: 32px;
+        }
+
+        .notification_message:hover {
+          text-decoration: none;
+          opacity: 0.7;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+//main contents style
+
+.main-wrapper {
+  width: 100%;
+  background-color: #fefef7;
+  position: absolute;
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+
+  .main-navbar {
+    width: 980px;
+    height: 16px;
+    margin: 20px auto;
+    font-size: 12px;
+
+    .main-navbar__link {
+      font-size: 12px;
+      color: #4ea6cc
+    }
+  }
+
+  .main-contents {
+    width: 980px;
+    height: calc(100% - 52px);
+    margin: 16px auto;
+
+    .contents-left {
+      width: 650px;
+      float: left;
+
+      .user-wrapper {
+        width: 650px;
+        height: 203px;
+        background-color: white;
+        border-radius: 3px;
+        float: left;
+        margin-bottom: 20px;
+
+        .user-profile-wrapper {
+          width: 621px;
+          height: 174px;
+          margin-top: 13px;
+          margin-left: 15px;
+
+          .user-profile-left {
+            width: 120px;
+            height: 174px;
+            float: left;
+
+            .user-avatar {
+              width: 91px;
+              border-radius: 10px;
+            }
+
+            .user-nav {
+              height: 72px;
+
+              li {
+                width: 45px;
+                height: 36px;
+                list-style: none;
+                background-color: #d8d8d8;
+                border-radius: 3px;
+                display: inline-block;
+                margin:1px;
+                float: left;
+                text-align: center;
+
+                i {
+                  color: #fff;
+                  font-size: 25px;
+                  line-height: 40px;
+                }
+
+              }
+
+              li:hover {
+                opacity: 0.5;
+              }
+
+            }
+
+          }
+          .user-profile-right {
+            width: 530px;
+            height: 174px;
+            margin-left: 91px;
+
+            .page-title-tag {
+              height: 36px;
+              margin-bottom: 10px;
+              .page-title {
+                font-size: 24px;
+                float: left;
+              }
+
+              .setting-icon-wrapper {
+                width: 36px;
+                height:25px;
+                background: rgba(216, 216, 216, 0.5);
+                float: right;
+                position: relative;
+
+                .setting-icon {
+                  font-size: 1em;
+                  width: 16px;
+                  height: 16px;
+                  display: block;
+                  position: absolute;
+                  top: 5px;
+                  left: 10px;
+                  color: #a1a1a1;
+                }
+
+              }
+
+              .setting-icon-wrapper:hover {
+                opacity: 0.3;
+              }
+
+            }
+            .user-shelf {
+              width: 100%;
+              height: 91px;
+              .user-shelf-name {
+              height: 21px;
+              font-size: 12px;
+              }
+            }
+
+            .user-activity {
+              width: 400px;
+              height: 39px;
+              text-align: center;
+              margin-bottom: 0px;
+              li {
+                float: left;
+                margin: 5px;
+                font-size: 12px;
+                a {
+                  color: #4ea6cc;
+                  font-size: 16px;
+                }
+                p {
+                  color: #a1a1a1;
+                }
+                .number {
+                  color: #4ea6cc;
+                  font-size: 16px;
+                }
+              }
+              .menu-partition {
+                border-left: 1px gray solid;
+                float: left;
+              }
+            }
+
+            .user-social {
+              height: 40px;
+              width: 400px;
+              .follow-button {
+                width: 90px;
+                clear: both;
+                border: 1px #f0f0f0 solid;
+                font-size: 12px;
+                padding: 8px;
+                color: #cdcdcd;
+                border-radius: 3px;
+                display: inline-block;
+                text-align: center;
+              }
+              .follows {
+                height: 34px;
+                display: inline-block;
+                li {
+                  display: inline-block;
+                  margin: 5px;
+                  a {
+                    font-size: 12px;
+                    color: black;
+                  }
+                }
+              }
+            }
+
+          }
+
+        }
+
+      }
+      .description {
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
+      .contents-search-form {
+        background: rgba(78, 166, 204, 0.2);
+        margin-bottom: 20px;
+        input, select {
+          display: inline-block;
+          margin: 10px;
+          vertical-align: middle;
+          height: 30px;
+        }
+        input {
+          width: 230px;
+          font-size: 14px;
+          border: 1px #1e1e1e solid;
+          border-radius: 3px;
+          padding-left: 20px;
+        }
+        .main-search-button {
+          width: 76px;
+          height: 34px;
+          background-color: #4ea6cc;
+          display: inline-block;
+          margin: 10px;
+          border-radius: 3px;
+          .search-icon {
+            color: white;
+            font-size: 14px;
+          }
+        }
+        .main-search-button:hover {
+          background-color: black;
+        }
+      }
+      .reading-status-title {
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
+      .mybooks-by-reading-status {
+        width: 650px;
+        height: 260px;
+        border: 1px #cdcdcd solid;
+        border-top: 3px #1e1e1e solid;
+        background-color: white;
+        margin-bottom: 20px;
+      }
+      .tab-menu {
+        height: 35px;
+        border-bottom: 5px #1e1e1e solid;
+        overflow: hidden;
+        margin-bottom: 20px;
+        li {
+          display: inline-block;
+          font-size: 12px;
+          border:1px #cdcdcd solid;
+          padding: 10px;
+          background-color: white;
+        }
+        .current {
+          background-color: black;
+          color: #f0f0f0;
+          border: 1px #1e1e1e solid;
+        }
+        .friend-time-line:hover {
+          background-color: #4ea6cc;
+          color: #f0f0f0;
+        }
+
+        .my-time-line:hover {
+          background-color: #4ea6cc;
+          color: #f0f0f0;
+        }
+      }
+
+      .timeline {
+        width: 650px;
+
+        .timeline-list {
+          width: 650px;
+
+          li {
+
+            .contents-header {
+              height: 36px;
+
+              .thumbnail-wrapper {
+                width: 32px;
+                height: 32px;
+                margin-left: 10px;
+                background-color: white;
+                border: 1px #cdcdcd solid;
+                display: inline-block;
+                border-radius: 3px;
+
+                img {
+                  width: 30px;
+                  height: 30px;
+                  margin-top: 1px;
+                  margin-left: 1px;
+                }
+
+              }
+
+              .thumbnail-wrapper:hover {
+                border: 1px #4ea6cc solid;
+              }
+
+              .timeline-notice {
+                height: 32px;
+                margin-left: 10px;
+                font-size: 12px;
+                display: inline-block;
+                vertical-align: middle;
+
+                .book-link {
+                  color: #4ea6cc;
+                  text-decoration: none;
+                }
+                .timestamp {
+                  color: #999;
+                }
+
+              }
+
+            }
+
+            .contents-body-wrapper {
+              height: calc(100% - 36px);
+
+              .contents-body {
+                width: 600px;
+                border: 1px solid #ccc;
+                background-color: #eee;
+                margin-left: 49px;
+
+                .body-inner {
+                  margin-left: 10px;
+
+                  .book-info {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+
+                    img {
+                      width: 51px;
+                      height: 75px;
+                      float: left;
+                    }
+
+                    ul {
+                      float: right;
+                      width: 520px;
+                      height: 75px;
+
+                      li {
+                        height: 14px;
+                      }
+
+                      .book-title {
+                        margin-bottom: 5px;
+                      }
+
+                      .book-rate {
+                        font-size: 12px;
+                        margin-bottom: 15px;
+
+                        .review-number {
+                          color: red;
+                        }
+
+                        .rate {
+                          color: orange;
+                        }
+
+                      }
+
+                      .book-detail {
+                        font-size: 12px;
+                      }
+
+                    }
+
+                  }
+
+                  .review {
+                    border: 1px solid #ccc;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+
+                    .review-body {
+                      background-color: white;
+                      padding:10px;
+                      font-size: 12px;
+                    }
+
+                    .review-footer {
+                      height: 32px;
+                      background: rgba(78, 166, 204, 0.1);
+                      font-size: 12px;
+
+                      p {
+                        display: inline-block;
+                        margin-left: 10px;
+                        line-height: 32px;
+                        color: orange;
+                      }
+
+                      a {
+                        font-size: 12px;
+                        color: #4ea6cc;
+                        display: inline-block;
+                        margin-left: 10px;
+                        text-decoration: none;
+                      }
+
+                    }
+
+                  }
+
+                  .like-wrapper {
+                    height: 25px;
+                    margin-bottom: 10px;
+
+                    a {
+                      display: inline-block;
+
+                      img {
+                        width: 115px;
+                      }
+
+                    }
+
+                    .like-counter {
+                      padding: 0 5px;
+                      background-color: #fff;
+                      border: 1px #cdcdcd solid;
+                      display: inline-block;
+                      border-radius: 3px;
+                      font-size: 12px;
+                      line-height: 25px;
+                      vertical-align: top;
+                      position: relative;
+                    }
+
+                    .like-counter::before{
+                      content: '';
+                      position: absolute;
+                      display: block;
+                      width: 0;
+                      height: 0;
+                      left: -6px;
+                      top:6px;
+                      border-right: 5px solid #cdcdcd;
+                      border-top: 5px solid transparent;
+                      border-bottom: 5px solid transparent;
+                    }
+
+                    .like-counter::after{
+                      content: '';
+                      position: absolute;
+                      display: block;
+                      width: 0;
+                      height: 0;
+                      left: -4px;
+                      top: 6px;
+                      border-right: 5px solid #fff;
+                      border-top: 5px solid transparent;
+                      border-bottom: 5px solid transparent;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    .contents-right {
+      width: 300px;
+      float: right;
+
+      .advertisement {
+        float: right;
+        width: 300px;
+        height: 600px;
+        margin-bottom: 20px;
+      }
+      .side-menu {
+        width: 300px;
+        height: 890px;
+        background-color: #f0f0f0;
+        clear: both;
+      }
+    }
+
+  }
+
+
+
+}
+
+.footer {
+  bottom: 0;
+  height: 450px;
+  background-color: #e4e4e4;
+  padding-top: 30px;
+
+  .nav-wrapper{
+    width: 990px;
+    margin: 0 auto;
+
+    nav {
+      width: 930px;
+      height: 335px;
+      background-color: #fff;
+      margin: 0 auto;
+      border-radius: 10px;
+      padding-top: 30px;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      ul {
+        float: left;
+
+        li {
+          width: 150px;
+          font-size: 12px;
+          display: inline-block;
+          vertical-align: top;
+          margin: 10px;
+
+          ul {
+            li {
+              font-size:10px;
+              margin: 3px;
+              color: #656565;
+
+              a{
+                color: #656565;
+                text-decoration: none;
+               }
+
+              a:hover {
+                text-decoration: underline;
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+      .banner-wrapper {
+        width: 200px;
+        height: 300px;
+        float: right;
+      }
+
+    }
+
+    .footer-navi {
+      height: 16px;
+      padding-right: 20px;
+      padding-left: 20px;
+
+      ul {
+        font-size: 12px;
+
+        li {
+          float: left;
+          color: #a1a1a1;
+        }
+
+        .menu-partition {
+          height: 12px;
+          border-left: 1px #a1a1a1 solid;
+          float: left;
+          line-height: 16px;
+          margin-left: 8px;
+          margin-right: 8px;
+          margin-top:2px;
+        }
+
+      }
+
+      .copyright {
+        font-size: 12px;
+        color: #a1a1a1;
+        float: right;
+      }
+
+    }
+
+  }
+
+}
+
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
