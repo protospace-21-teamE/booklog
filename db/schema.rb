@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228082337) do
+ActiveRecord::Schema.define(version: 20180228094125) do
+
+  create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                      null: false
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["name"], name: "index_authors_on_name", using: :btree
+  end
+
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                      null: false
+    t.text     "description", limit: 65535
+    t.string   "publisher"
+    t.date     "released_on"
+    t.integer  "media_type"
+    t.text     "amazon_url",  limit: 65535, null: false
+    t.integer  "author_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "image"
+    t.index ["author_id"], name: "index_books_on_author_id", using: :btree
+    t.index ["name"], name: "index_books_on_name", using: :btree
+  end
+
+  add_foreign_key "books", "authors"
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                                default: "", null: false
