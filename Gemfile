@@ -20,7 +20,9 @@ gem 'pry-rails'
 gem 'erb2haml'
 gem 'haml-rails'
 gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 gem 'draper'
+gem 'amazon-ecs'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -38,7 +40,3 @@ group :production do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'font-awesome-rails'
-gem 'font-awesome-sass'
-gem 'erb2haml'
-gem 'haml-rails'

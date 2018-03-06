@@ -42,6 +42,9 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    amazon-ecs (2.5.0)
+      nokogiri (~> 1.4)
+      ruby-hmac (~> 0.3)
     arel (7.1.4)
     bcrypt (3.1.11)
     bindex (0.5.0)
@@ -172,6 +175,7 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    ruby-hmac (0.4.0)
     request_store (1.4.0)
       rack (>= 1.4)
     responders (2.4.0)
@@ -230,6 +234,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amazon-ecs
   byebug
   coffee-rails (~> 4.2)
   devise
