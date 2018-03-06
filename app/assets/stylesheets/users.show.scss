@@ -1,0 +1,110 @@
+.user-page {
+  &__content {
+    &--main {
+      .user-wrapper {
+        background-color: gray;
+        height: 200px;
+        width: 650px;
+      }
+      .user-show-page__table {
+        @include clearfix();
+        &__content {
+          table {
+            background-color: #fff;
+            border-top: 5px #333 solid;
+            margin: 5px 0 35px;
+            width: 100%;
+            tbody {
+              tr {
+                border-bottom: 1px #cdcdcd solid;
+                font-size: 13px;
+                th {
+                  background-color: #e8f6f5;
+                  color: #656565;
+                  font-weight: bold;
+                  padding: 25px;
+                  text-align: left;
+                  width: 150px;
+                }
+                .best01 {
+                  background-color: #da4740;
+                  color: #fff;
+                }
+                .best02 {
+                  background-color: #f58c29;
+                  color: #fff;
+                }
+                .best03 {
+                  background-color: #89c600;
+                  color: #fff;
+                }
+                td {
+                  @include clearfix();
+                  padding: 25px;
+                  width: 400px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .user-show-page__section {
+        @include clearfix();
+        margin-bottom: 20px;
+        h3 {
+          color: #333;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        p {
+          font-size: 12px;
+          margin-top: 10px;
+        }
+        a.best3 {
+          display: inline-block;
+          font-size: 12px;
+          font-weight: bold;
+          line-height: 14px;
+          padding-left: 20px;
+        }
+        table {
+          background-color: #fff;
+          margin-top: 5px;
+          tbody {
+            tr {
+              border: 1px #cdcdcd solid;
+              th {
+                color: #fff;
+                font-weight: bold;
+                font-size: 12px;
+                padding: 0 4px;
+                text-align: center;
+              }
+              .best01 {
+                background-color: #da4740;
+              }
+              .best02 {
+                background-color: #f58c29;
+              }
+              .best03 {
+                background-color: #89c600;
+              }
+              td {
+                color: #cdcdcd;
+                font-size: 11px;
+                height: 52px;
+                padding: 5px 15px;
+                text-align: center;
+                width: 52px;
+                a {
+                  font-size: 11px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

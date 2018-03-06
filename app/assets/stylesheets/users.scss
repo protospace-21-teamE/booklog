@@ -1,0 +1,216 @@
+/*-- セレクタ設定 ---------------------------------- */
+a:link, a:visited {
+  color: #4ea6cc;
+  text-decoration: none;
+}
+
+#btn:hover {
+  background-color: #1e1e1e;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+}
+
+.inputtext {
+  border: 1px #1e1e1e solid;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 1.5em;
+  padding: 7px;
+  width: 378px;
+}
+.inputtext:focus {
+  background-color: rgb(244,239,215);
+  border-color: rgb(195,186,144);
+  outline: none;
+}
+
+select {
+  border: 1px #1e1e1e solid;
+  font-size: 14px;
+  height: 30px;
+  outline: none;
+}
+
+.submit-area {
+  line-height: 2px;
+  text-align: center;
+  input {
+    background-color: #4ea6cc;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+    outline: none;
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+textarea {
+  border: 1px #1e1e1e solid;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 1.4em;
+  padding: 7px;
+  width: 378px;
+}
+
+/*-- ページ全体設定 ---------------------------------- */
+.body-wrapper {
+  @include clearfix();
+  background-color: rgb(253,250,237);
+}
+
+/*-- ヘッダー設定（signin、signupのみ）（edit, showはbooks/indexから部分テンプレートとして後ほど差し替え） ---------------------------------- */
+.header-wrapper {
+  text-align: center;
+  .header-nav {
+    background-color: #8bafbf;
+    height: 60px;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+/*-- 以下、差し替え後に削除 ---------------------------------- */
+  .header-info-text {
+    background-color: #e4e4e4;
+    font-size: 12px;
+    margin-top: 60px;
+    padding: 8px 10px;
+    span {
+      background: url();
+      background-size: 800px 325px;
+      border-radius: 3px;
+      display: inline-block;
+      height: 14px;
+      margin-right: 5px;
+      width: 30px;
+    }
+    a {
+      color: #666;
+      text-decoration: underline;
+    }
+  }
+}
+/*-- 削除 ここまで ---------------------------------- */
+
+/*-- メインコンテンツ設定 ---------------------------------- */
+.user-page {
+  @include clearfix();
+  margin: 20px auto 0;
+  padding: 0;
+  position: relative;
+  width: 980px;
+  &__site-map{
+    margin-bottom: 15px;
+    text-align: left;
+    width: 980px;
+    ul {
+      li {
+        color: #a1a1a1;
+        font-size: 12px;
+        display: inline;
+      }
+    }
+  }
+  &__content {
+    @include clearfix();
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    .user-page__content--main {
+      float: left;
+      width: 650px;
+      h1 {
+        color: #1e1e1e;
+        font-size: 34px;
+        line-height: 38px;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #333;
+        font-size: 14px;
+        line-height: 1.7em;
+        margin: 20px 0;
+      }
+/*-- signin,signupのみ適用---------------------------------- */
+      .social-login-area {
+        margin-bottom: 30px;
+        h2 {
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        ul {
+          @include clearfix();
+          margin: 10px 0;
+          li {
+            float: left;
+            width: 300px;
+            a{
+              border-radius: 5px;
+              color: #fff;
+              display: block;
+              font-size: 14px;
+              padding: 15px 0;
+              text-align: center;
+            }
+            a.tw {
+              background-color: #55acee;
+              margin-right: 8px;
+              i {
+                font-size: 18px;
+                margin-right: 7px;
+              }
+            }
+            a.fb {
+              background-color: #3b5998;
+              i {
+                font-size: 18px;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+/*-- signin,signupのみ適用 ここまで---------------------------------- */
+    }
+  }
+/*-- show,indexのみ適用---------------------------------- */
+  aside.ad-footer {
+    margin: 30px auto;
+    background-image: image-url("ad-728-90-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    .ad-728-90 {
+      height: 90px;
+      width: 728px;
+    }
+  }
+/*-- show,indexのみ適用 ここまで---------------------------------- */
+/*-- signin,signupのみ適用---------------------------------- */
+  &__footer {
+    margin: 0;
+    padding: 30px 0;
+    text-align: center;
+  }
+/*-- signin,signupのみ適用 ここまで---------------------------------- */
+}
+/*-- フッター設定(show,indexのみ適用) ただしbooks/indexから部分テンプレートとして差し替え後、削除---------------------------------- */
+#footer {
+  background-color: gray;
+  height: 446px;
+  margin-top: 30px;
+}
+/*-- 削除 ここまで---------------------------------- */

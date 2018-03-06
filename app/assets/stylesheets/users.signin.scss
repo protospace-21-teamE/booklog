@@ -1,0 +1,99 @@
+.signin-body__wrapper {
+  background-color: #f0f0f0;
+  .user-page__header {
+    .header-nav {
+      position: relative;
+    }
+  }
+  .signin-page {
+    .user-page__content {
+      &--main {
+        margin: 40px auto 100px;
+        width: 600px;
+        float: none;
+        .signin-page__form {
+          background-color: #fff;
+          border-radius: 10px;
+          margin-bottom: 40px;
+          padding: 40px 30px;
+          width: 540px;
+          &__content {
+            font-size: 12px;
+            line-height: 1.4em;
+            dl {
+              @include clearfix();
+              margin: 0 auto 20px;
+              dt {
+                font-size: 16px;
+                float: left;
+                padding: 9px 10px 0 0;
+                text-align: right;
+                width: 110px;
+                label {
+                  cursor: default;
+                }
+              }
+              dd {
+                font-size: 16px;
+                float: left;
+              }
+            }
+            .submit-area {
+              ul {
+                padding-top: 10px;
+                li {
+                  display: inline;
+                  padding-right: 5px;
+                  a {
+                    color: #333;
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .signin-page__signup {
+          h2 {
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          a {
+            background-color: #da4740;
+            border-radius: 5px;
+            color: #fff;
+            display: block;
+            font-size: 14px;
+            padding: 15px 0;
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .user-page__footer{
+    ul {
+      font-size: 12px;
+      padding-bottom: 12px;
+    }
+    li {
+      border-left: 1px solid #646464;
+      display: inline-block;
+      padding: 0 5px;
+      a {
+        color: #1e1e1e;
+        text-decoration: underline;
+      }
+    }
+    li.begin {
+      border-left: none;
+    }
+    address {
+      color: #1e1e1e;
+      display: block;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+}
