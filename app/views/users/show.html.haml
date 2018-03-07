@@ -1,12 +1,4 @@
 .body-wrapper
-  .header-wrapper
-    .header-nav
-      %a.header-nav__mini-icon
-    .header-info-text
-      %ul
-        %li
-          %span.icon-new NEW
-          %a{href:"#"} 3月1日刊、女性向け無料小冊子『東京暮らし防災』がすごい!?
   .user-page
     .user-page__site-map
       %ul.site-map__ul
@@ -23,8 +15,8 @@
     .user-page__content
       = render partial: "shared/side"
       .user-page__content--main
-        .user-wrapper
-        %p #{@user.birth_date}生まれの女性
+        = render "shared/profile"
+        %p.user-page__content--main--p #{@user.birth_date}生まれの女性
         .user-show-page__table
           .user-show-page__table__content
             %table
@@ -85,4 +77,3 @@
             %a{href:"#"} 読書目標を設定する
     %aside.ad-footer
       .ad-728-90
-  #footer
