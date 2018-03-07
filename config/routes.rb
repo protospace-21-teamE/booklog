@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :shelves, only: [:show, :edit, :update]
   end
 
-  resources :books, only: [:show]
+  resources :books, only: [:index,:show] do
+    resources :reviews, only: [:create, :show, :edit, :update, :destroy]
+  end
   root "books#index"
 end
