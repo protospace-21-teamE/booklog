@@ -1,0 +1,51 @@
+.user-wrapper
+  .user-profile-wrapper.clearfix
+    .user-profile-left
+      %img.user-avatar{src: "/assets/prof_noimage.gif"}/
+      %ul.user-nav
+        %li
+          %a{href: "#"}
+            %i.fa.fa-th
+        %li
+          %a{href: "#"}
+            %i.fa.fa-clock-o
+        %li
+          %a{href: "#"}
+            %i.fa.fa-user
+        %li
+          %a{href: "#"}
+            %i.fa.fa-ellipsis-h
+    .user-profile-right
+      .user-shelf
+        .page-title-tag.clearfix
+          %p.page-title プロフィール
+          .setting-icon-wrapper
+            %a{href: "#"}
+              %i.fa.fa-cog.setting-icon
+        %p.user-shelf-name
+          teamEさんの本棚
+      %ul.user-activity
+        %li
+          %p 登録アイテム
+          %a{href: "#"} 100
+        %span.menu-partition
+        %li
+          %p レビュー
+          %a{href: "#"} 100
+        %span.menu-partition
+        %li
+          %p レビュー率
+          %p.number 100%
+        %span.menu-partition
+        %li
+          %p フレーズ
+          %p.number 100
+      .user-social
+        %span.follow-button
+          あなたの本棚
+        %ul.follows
+          %li
+            = link_to '100フォロー', '#'
+          %li
+            = link_to '100フォロワー', '#'
+          .social-SNS

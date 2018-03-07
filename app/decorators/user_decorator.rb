@@ -2,7 +2,7 @@ class UserDecorator < Draper::Decorator
   delegate_all
 
     def birth_date
-      user.birth_date.strftime("%Y年%m月%d日")
+      user.birth_date.strftime("%Y年%-m月%-d日")
     end
 
     def birth_date_subtype

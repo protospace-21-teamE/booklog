@@ -1,0 +1,43 @@
+%header.header
+  .header__navbar
+    .header__navbar__logo
+      %a.logo-button{href: "#"}
+        %img.logo-image{src: "/assets/booklog.png"}
+    %ul.header__navbar__contents-links
+      %li.contents-link-list
+        %a.contents-link-button{href: "#"} ランキング
+      %li.contents-link-list
+        %a.contents-link-button{href: "#"} 新刊情報
+      %li.contents-link-list
+        %a.contents-link-button{href: "#"} 談話室
+      %li.contents-link-list
+        %a.contents-link-button{href: "#"} まとめ
+    .header__navbar__search-form
+      %form.header-search-form
+        %input.search-field{placeholder: "作者・著者名で検索して本棚登録", type: "text"}
+        %i.fa.fa-question-circle.help-icon
+        %button.search-button{type: "submit"}
+          %i.fa.fa-search.search-icon
+    .dropdown-list
+      .header__navbar__useful-links
+        %a{href: "#"}
+          %i.fa.fa-bars.menu-icon
+      %span.menu-partition
+      .header__navbar__timeline
+        %a{href: "#"}
+          %i.fa.fa-clock-o.clock-icon
+      .header__navbar__shelf
+        %a{href: "#"}
+          %i.fa.fa-th.shelf-icon
+      .header__navbar__home
+        %a{href: "#"}
+          %i.fa.fa-home.home-icon
+      .header__navbar__user-links
+        %a{href: "#"}
+          %img.user-detail{src: "/assets/prof_noimage.gif"}
+  .header__notification
+    %ul.notification-message-wrapper
+      %li
+        %img.notification_tag{src: "/assets/new_tag.png"}
+      %li
+        %a.notification_message{href: "#"} 重版決定！人の本棚を覗き見しちゃう『絶景本棚』が急上昇！

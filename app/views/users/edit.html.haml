@@ -1,12 +1,4 @@
 .body-wrapper
-  .header-wrapper
-    .header-nav
-      %a.header-nav__mini-icon
-    .header-info-text
-      %ul
-        %li
-          %span.icon-new NEW
-          %a{href: ""} 3月1日刊、女性向け無料小冊子『東京暮らし防災』がすごい!?
   .user-page
     .user-page__site-map
       %ul.site-map__ul
@@ -17,10 +9,10 @@
         %li.site-map__ul
           %span プロフィールの設定
     .user-page__content
-      = render partial: "shared/side"
+      = render partial: "shared/side_subtype"
       .user-page__content--main
-        %h1 プロフィールの設定
-        %p プロフィール、プロフィールタグ、お気に入りベスト３を設定します。
+        %h1.user-page__content--main--h1 プロフィールの設定
+        %p.user-page__content--main--p プロフィール、プロフィールタグ、お気に入りベスト３を設定します。
         .user-edit-page__form
           %h2 基本設定
           .user-edit-page__form__content
@@ -252,4 +244,3 @@
               %input{type: "submit", name: "commit", value: "ベスト3を更新する", id: "btn", class: "mode--user-edit"}
     %aside.ad-footer
       .ad-728-90
-  #footer
