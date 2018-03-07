@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306030646) do
+ActiveRecord::Schema.define(version: 20180307031544) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                      null: false
@@ -33,6 +33,22 @@ ActiveRecord::Schema.define(version: 20180306030646) do
     t.string   "image"
     t.index ["author_id"], name: "index_books_on_author_id", using: :btree
     t.index ["name"], name: "index_books_on_name", using: :btree
+  end
+
+  create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "body",           limit: 65535
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.integer  "rate"
+    t.integer  "reading_status"
+    t.date     "read_on"
+    t.text     "comment",        limit: 65535
+    t.integer  "is_public"
+    t.integer  "is_spoiler"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["book_id"], name: "index_reviews_on_book_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
   create_table "shelves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -78,5 +94,7 @@ ActiveRecord::Schema.define(version: 20180306030646) do
   end
 
   add_foreign_key "books", "authors"
+  add_foreign_key "reviews", "books"
+  add_foreign_key "reviews", "users"
   add_foreign_key "shelves", "users"
 end
