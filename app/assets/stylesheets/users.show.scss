@@ -1,11 +1,6 @@
 .user-page {
   &__content {
     &--main {
-      .user-wrapper {
-        background-color: gray;
-        height: 200px;
-        width: 650px;
-      }
       .user-show-page__table {
         @include clearfix();
         &__content {

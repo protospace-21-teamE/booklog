@@ -1,9 +1,4 @@
 .body-wrapper {
-  .user-page__header {
-    .header-nav {
-      position: relative;
-    }
-  }
   .signup-page{
     .user-page__content{
       &--main {
@@ -79,7 +74,9 @@
                 }
               }
             }
-            p {
+            .signup-confirmation--p {
+              margin: 20px 0;
+              font-size: 14px;
               text-align: center;
             }
           }
