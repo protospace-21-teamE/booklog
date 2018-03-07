@@ -1,12 +1,9 @@
 .body-wrapper
-  .header-wrapper.user-page__header
-    .header-nav
-      %a{href:"/", class: "header-nav__mini-icon"}
   .signup-page
     .user-page__content
       .user-page__content--main
-        %h1 ブクログの新規登録
-        %p.b40M
+        %h1.user-page__content--main--h1 ブクログの新規登録
+        %p.user-page__content--main--p.b40M
           ブクログをはじめる方法は2つあります。
           %br
           どちらもコーヒーを淹れている間（5分くらい）でできます。もちろん、無料です。
@@ -86,7 +83,7 @@
                     %td
                       != sprintf( |
                         f.date_select(:birth_date, use_month_numbers: true, start_year: 1901, end_year: Time.now.year, order: [:year, :month, :day], date_separator: "%s"), "年 ", "月 ") + "日 " |
-              %p
+              %p.signup-confirmation--p
                 %a{href: ""}> ブクログの利用規約
                 をお読みいただき、確認ページにお進みください。
               .submit-area
