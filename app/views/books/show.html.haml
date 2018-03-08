@@ -1,0 +1,139 @@
+.main-wrapper.clearfix
+  .main-navbar
+    %a.main-navbar__link{href: "#"} ブクログ
+    >
+    %a.main-navbar__link{href: "#"}
+      = @book.name
+    >
+    teamEさんのホーム
+  .main-contents.clearfix
+    .contents-left
+      .book-wrapper
+        .book-profile-wrapper.clearfix
+          .book-profile-top.clearfix
+            .book-profile-left.clearfix
+              %a{href: '#'}
+                - if @book.image.present?
+                  = image_tag @book.image, class: 'book-thumbnail'
+                - else
+                  = image_tag '/assets/noimage_m.png', class: 'book-thumbnail'
+              = link_to book_reviews_path(@book), method: :post do
+                = image_tag '/assets/archive_button.png',  class: 'archive-book-button'
+              .sns-button
+                %ul
+                  %li
+                    %a{href: '#'}
+                      = image_tag '/assets/btn_twitter_circle.png'
+                  %li
+                    %a{href: '#'}
+                      = image_tag '/assets/btn_facebook_circle.png'
+                  %li
+                    %a{href: '#'}
+                      = image_tag '/assets/btn_hatena_circle.png'
+            .book-profile-right.clearfix
+              %p.book-title
+                = @book.name
+              %p.book-author
+                著者：
+                = link_to @book.author.name
+              %p.book-about-publish
+                - if @book.released_on.present?
+                  #{@book.publisher}(#{@book.released_date}発売)
+                - else
+                  = @book.publisher
+              .book-rate
+                = image_tag '/assets/unstar.png'
+                = image_tag '/assets/unstar.png'
+                = image_tag '/assets/unstar.png'
+                = image_tag '/assets/unstar.png'
+                = image_tag '/assets/unstar.png'
+                .rating
+                  0.00
+                  %i.fa.fa-chevron-circle-down.rating-icon
+              .book-about-number
+                %ul
+                  %li.about-archive
+                    %i.fa.fa-user.user-icon
+                    本棚登録:
+                    %span.archive-number 100
+                    人
+                  %li.about-review
+                    %i.fa.fa-comment.review-icon
+                    レビュー:
+                    %span.review-number 100
+                    件
+              .book-purchase
+                %a{href: @book.amazon_url }
+                  = image_tag '/assets/btn_amazon_detail.png', class: 'amazon-purchase-button'
+                %a{href: '#'}
+                  = image_tag '/assets/btn_amazon_kindle.png', class: 'kindle-purchase-button'
+                %ul.button-others
+                  %li
+                    %a{href: '#'}
+                      = image_tag '/assets/btn_honto_logo.png', class: 'button-others'
+                  %li
+                    %a{href: '#'}
+                      = image_tag '/assets/btn_rakuten_logo.png', class: 'button-others'
+                  %li
+                    %a{href: '#'}
+                      = image_tag '/assets/btn_bol_logo.png', class: 'button-others'
+                  %li
+                    %a{href: '#'}
+                      = image_tag '/assets/btn_calil_logo.png', class: 'button-others'
+                  %li
+                    %a{href: '#', class: 'other-store-button'}
+                      他の購入ストア
+          .book-profile-bottom
+            = link_to 'サイトに貼り付ける', '#', class: 'create-embedded-link'
+            %span.ISBN-code
+              \/ISBN・EAN: 9784864032810
+            %span.media-info
+              Amazon.co.jp ・本 (460ページ)
+      %p.reading-status-title
+        #{@book.name}の感想・レビュー・書評
+      .mybooks-by-reading-status
+      .tab-menu.clearfix
+        %ul
+          %li.current 興味グラフ
+          %li.friend-time-line 友だちのタイムライン
+          %li.my-time-line あなたのタイムライン
+      .timeline
+        %ul.timeline-list
+          %li
+            .contents-header
+              .thumbnail-wrapper
+                = image_tag "/assets/prof_noimage_thumbnail"
+              .timeline-notice
+                = link_to 'teamE', "#", class: "user-link"
+                さんが
+                = link_to 'ブクログ', '#', class: "book-link"
+                の
+                = link_to 'レビュー', '#', class: "review-link"
+                を書きました。
+                %span.timestamp
+                  1時間前
+            .contents-body-wrapper
+              .contents-body
+                .body-inner
+                  .book-info.clearfix
+                    = image_tag '/assets/book_example.jpg'
+                    %ul
+                      %li.book-title 何者
+                      %li.book-rate
+                        %span.review-number
+                          1000人が登録
+                        %span.rate
+                          ★5.00
+                      %li.book-detail 著者/ブクログ/ブクログ社/本/2018年3月3日
+                  .review
+                    .review-body 12月15日『王様のブランチ』で紹介されて、面白そうだから予約しました。作家として順調にすすんでいる朝井リョウさんが自身の就活をもとに書いたものと記憶しています。そうしたら今年になって早々に【直木賞】を受賞しました！平成生まれ初！今まで直木賞の作品を読んだことあるかな？と調べたら『蒲田行進曲』『容疑者Xの献身』を映画で見ただけでした。面白かったですよ。福山雅治さんかっこいいし。小説読んでから映画見るとがっかりすることが多いので、人気のある小説は映画ですませてしまいます。でも今回この本を読んでみたら、最初から面白かったし、加速度的に面白くなっていくし。ああ、高く評価される小説ってこんななんだなあって思いました。これからは映画ですませないで、ちゃんと読もうっと。内容はひとことでいえば、「就活すると成長する」とだけにしておきます。彼にはこれからも経験をもとにした作家活動を続けてほしいな。
+                    .review-footer
+                      %p.rate
+                        ★★★★★
+                      = link_to '詳細・コメントする', '#'
+                  .like-wrapper
+                    %a
+                      = image_tag '/assets/like.png'
+                    %span.like-counter
+                      100
+    = render partial: "shared/side"
