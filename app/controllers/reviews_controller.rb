@@ -9,6 +9,6 @@ class ReviewsController < ApplicationController
   private
 
   def create_params
-    params.permit(:book_id).merge(user_id: current_user.id)
+    params.require(:review).permit(:is_public, :reading_status).merge(user_id: current_user.id, book_id: params[:book_id])
   end
 end
