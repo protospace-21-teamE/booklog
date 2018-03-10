@@ -1,0 +1,104 @@
+.body-wrapper
+  .shelf-page
+    .shelf-page__content
+      .shelf-page__content__header
+        .shelf-page__content__header__left-wrapper
+          .shelf-page__site-map
+            %ul.shelf-page__site-map__ul
+              %li.shelf-page__site-map__li
+                %a{href: "/"}
+                  %span ブクログ
+                %span >
+              %li.shelf-page__site-map__li
+                %span #{@user.name}さんの本棚
+          .shelf-page__content__header__left
+            .user-profile-wrapper.clearfix
+              .user-profile-left
+                %img.user-avatar{src: "/assets/prof_noimage.gif"}/
+                %ul.user-nav
+                  %li
+                    %a{href: "#"}
+                      %i.fa.fa-th
+                  %li
+                    %a{href: "#"}
+                      %i.fa.fa-clock-o
+                  %li
+                    %a{href: "#"}
+                      %i.fa.fa-user
+                  %li
+                    %a{href: "#"}
+                      %i.fa.fa-ellipsis-h
+              .user-profile-right
+                .user-shelf
+                  .page-title-tag.clearfix
+                    %p.page-title プロフィール
+                    .setting-icon-wrapper
+                      %a{href: "#"}
+                        %i.fa.fa-cog.setting-icon
+                  %p.user-shelf-name
+                    teamEさんの本棚
+                %ul.user-activity
+                  %li
+                    %p 登録アイテム
+                    %a{href: "#"} 100
+                  %span.menu-partition
+                  %li
+                    %p レビュー
+                    %a{href: "#"} 100
+                  %span.menu-partition
+                  %li
+                    %p レビュー率
+                    %p.number 100%
+                  %span.menu-partition
+                  %li
+                    %p フレーズ
+                    %p.number 100
+                .user-social
+                  %span.follow-button
+                    あなたの本棚
+                  %ul.follows
+                    %li
+                      = link_to '100フォロー', '#'
+                    %li
+                      = link_to '100フォロワー', '#'
+                    .social-SNS
+        .shelf-page__content__header__right
+          %img{src: "/assets/ad-300-250-2.png"}
+      .shelf-page__content__main-menu
+        %ul.shelf-page__menu
+          %li.shelf-page__menu-filter-title
+            %span 絞り込み
+          %li.shelf-page__menu-filter-modale
+            %a{href: "#", class: "fa fa-filter"}
+              条件を指定
+          %li.shelf-page__menu-category-modal
+            %a{href: "#", class: "fa fa-folder"}
+              カテゴリ
+          %li.shelf-page__menu-tags-modal
+            %a{href: "#", class: "fa fa-tags"}
+              タグ
+          %li.shelf-page__menu-search-modal
+            %a{href: "#", class: "fa fa-search"}
+              本棚内検索
+          %li.shelf-page__menu-default
+            %span{class: "fa fa-times"}
+          %li.shelf-page__menu-front.menu-wide30
+            %a{href: "#", class: "fa fa-th"}
+          %li.shelf-page__menu-blog.menu-wide30
+            %a{href: "#", class: "fa fa-list"}
+          %li.shelf-page__menu-card.menu-wide30
+            %a{href: "#", class: "fa fa-columns"}
+          %li.shelf-page__menu-fullscreen.menu-wide30
+            %a{href: "#", class: "fa fa-arrow-up"}
+      .shelf-page__content__main
+        .shelf-wrapper
+          .shelf-area
+            .shelf-inner
+              - if @reviews.present?
+                - @reviews.each do |review|
+                  .book-wrapper
+                    .book-area
+                      .book-area-image
+                        .book-image
+                          = image_tag image_url(review.book)
+                      .book-area-buttons
