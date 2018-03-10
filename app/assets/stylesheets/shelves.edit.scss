@@ -1,0 +1,161 @@
+.user-page {
+  &__content {
+    &--main {
+      .tab-menu {
+        border-bottom: 5px #1e1e1e solid;
+        height: 35px;
+        font-size: 12px;
+        margin-top: 25px;
+        width: 100%;
+        ul {
+          li {
+            height: 35px;
+            float: left;
+            line-height: 36px;
+            margin: 0 11px 0 0;
+            position: relative;
+            text-align: center;
+            a {
+              background-color: #fff;
+              border-top: 1px #cdcdcd solid;
+              border-right: 1px #cdcdcd solid;
+              border-left: 1px #cdcdcd solid;
+              color: #555;
+              display: block;
+              min-width: 70px;
+              padding: 0 12px 0 10px;
+              height: 34px;
+            }
+            .current {
+              background-color: #1e1e1e;
+              border-top: 1px #1e1e1e solid;
+              border-right: 1px #1e1e1e solid;
+              border-left: 1px #1e1e1e solid;
+              color: #fff;
+            }
+          }
+        }
+      }
+      .user-edit-page__form {
+        @include clearfix();
+        h2 {
+          color: #333;
+          font-size: 16px;
+          font-weight: bold;
+          display: inline-block;
+          margin-bottom: 10px;
+          float: left;
+        }
+        p {
+          margin-bottom: 10px;
+        }
+        &__content {
+          table {
+            background-color: #fff;
+            border-top: 5px #333 solid;
+            margin: 5px 0 35px;
+            width: 100%;
+            tbody {
+              tr {
+                border-bottom: 1px #cdcdcd solid;
+                font-size: 13px;
+                th {
+                  background-color: #e8f6f5;
+                  color: #656565;
+                  font-weight: bold;
+                  padding: 25px;
+                  text-align: left;
+                  width: 150px;
+                }
+                td {
+                  @include clearfix();
+                  padding: 25px;
+                  width: 400px;
+                  .textarea--shelf-description {
+                    height: 100px;
+                  }
+                  .inputselect1 {
+                    margin: 0 10px 10px 0;
+                    width: 180px;
+                  }
+                  .inputselect2 {
+                    margin: 0 2px 10px 0;
+                    width: 180px;
+                  }
+                  .inputselect3 {
+                    margin: 0 2px 0 0;
+                    width: 180px;
+                  }
+                  ul {
+                    margin: 8px 0 0 20px ;
+                    li {
+                      color: silver;
+                      font-size: 11px;
+                      list-style: circle;
+                      margin-bottom: 3px;
+                    }
+                  }
+                  .list-style-none--ul {
+                    font-size: 13px;
+                    margin: 0;
+                    .list-style-none--li {
+                      color: #1e1e1e;
+                      font-size: 12px;
+                      height: 23px;
+                      list-style: none;
+                      margin: 0;
+                    }
+                  }
+                  .shelf-design-image-area {
+                    .shelf-design-image {
+                      border: none;
+                      height: 250px;
+                      width: 390px;
+                    }
+                  }
+                  .shelf-design {
+                    border: none;
+                    margin: 0 0 10px;
+                    tbody {
+                      tr {
+                        border: none;
+                        td {
+                          padding: 0 10px 0 0;
+                          width: auto;
+                          label {
+                            font-size: 13px;
+                          }
+                          input {
+                            font-size: 14px;
+                            margin: 5px 3px 5px 0;
+                          }
+                        }
+                      }
+                    }
+                  }
+                .shelf-design-image-area {
+                  margin: 15px 0;
+                  .shelf-design-image {
+                    height: 250px;
+                    width: 390px;
+                  }
+                }
+                }
+              }
+            }
+          }
+        }
+        .submit-area {
+          margin-bottom: 40px;
+          .mode--user-edit {
+            font-size: 12px;
+            height: auto;
+            margin: 0 auto;
+            padding: 10px 20px;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}

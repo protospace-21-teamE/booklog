@@ -1,0 +1,143 @@
+.body-wrapper
+  .user-page
+    .user-page__site-map
+      %ul.site-map__ul
+        %li.site-map__li
+          %a{href: "/"}
+            %span ブクログ
+          %span >
+        %li.site-map__ul
+          %span 本棚の設定
+    .user-page__content
+      = render partial: "shared/side_subtype"
+      .user-page__content--main
+        %h1.user-page__content--main--h1 本棚の設定
+        .tab-menu
+          %ul
+            %li
+              %a.current 基本設定
+            %li
+              %a 非公開設定
+        %p.user-page__content--main--p 本棚に関する情報の設定、本棚の見た目の設定はこちらから行います。
+        .user-edit-page__form
+          .user-edit-page__form__content
+            = form_for [@user, @shelf] do |f|
+              %table
+                %tbody
+                  %tr
+                    %th
+                      = f.label :name
+                    %td
+                      = f.text_field :name, autofocus: true, class: "inputtext"
+                      %ul
+                        %li 100文字以内
+                  %tr
+                    %th
+                      = f.label :description
+                    %td
+                      = f.text_area :description, class: "inputtext textarea--shelf-description"
+                      %ul
+                        %li 250文字以内 / HTMLタグ使用不可
+                  %tr
+                    %th
+                      = f.label :mode
+                    %td
+                      %ul.list-style-none--ul
+                        %li.list-style-none--li
+                          %label
+                            = f.radio_button :mode, "0"
+                            本棚
+                        %li.list-style-none--li
+                          %label
+                            = f.radio_button :mode, "1"
+                            ブログ
+                        %li.list-style-none--li
+                          %label
+                            = f.radio_button :mode, "2"
+                            読書カード
+                  %tr
+                    %th
+                      = f.label :design
+                    %td
+                      %table.shelf-design
+                        %tbody
+                          %tr
+                            %td
+                              %label
+                                = f.radio_button :design, "0"
+                                メイプル
+                            %td
+                              %label
+                                = f.radio_button :design, "1"
+                                チェリー
+                            %td
+                              %label
+                                = f.radio_button :design, "2"
+                                ウォールナット
+                          %tr
+                            %td
+                              %label
+                                = f.radio_button :design, "3"
+                                ダークウッド
+                            %td
+                              %label
+                                = f.radio_button :design, "4"
+                                キッズ
+                            %td
+                              %label
+                                = f.radio_button :design, "5"
+                                ラクガキ
+                          %tr
+                            %td
+                              %label
+                                = f.radio_button :design, "6"
+                                スパイダー
+                            %td
+                              %label
+                                = f.radio_button :design, "7"
+                                カフェ
+                            %td
+                              %label
+                                = f.radio_button :design, "8"
+                                ステイショナリー
+                          %tr
+                            %td
+                              %label
+                                = f.radio_button :design, "9"
+                                クラフト
+                            %td
+                              %label
+                                = f.radio_button :design, "10"
+                                アンティークA
+                            %td
+                              %label
+                                = f.radio_button :design, "11"
+                                アンティークB
+                      .shelf-design-image-area
+                        %img{src: "/assets/shelf-design-image-0.jpg", class: "shelf-design-image"}
+                  %tr
+                    %th
+                      = f.label :is_public
+                    %td
+                      = f.select :is_public, [["ジャンル:すべて"], ["ジャンル:本"], ["ジャンル:電子書籍"], ["ジャンル:マンガ"], ["ジャンル:洋書"], ["ジャンル:雑誌"], ["ジャンル:映画"], ["ジャンル:音楽"], ["ジャンル:ゲーム"], ["ジャンル:アプリ"]], {}, {class: "inputselect1"}
+                      = f.select :is_public, [["カテゴリ:すべて"]], {}, {class: "inputselect2"}
+                      = f.select :is_public, [["読書状況:すべて"], ["読書状況:いま読んでる"], ["読書状況:読み終わった"], ["読書状況:積読"]], {}, {class: "inputselect1"}
+                      = f.select :is_public, [["評価:すべて"], ["評価:★★★★★"], ["評価:★★★★"], ["評価:★★★"], ["評価:★★"], ["評価:★"]], {}, {class: "inputselect2"}
+                      = f.select :is_public, [["並び替えた順[降順]"], ["並び替えた順[昇順]"], ["登録日時順[降順]"], ["登録日時順[昇順]"], ["発売日順[降順]"], ["発売日順[昇順]"], ["読了日順[降順]"], ["読了日順[昇順]"]], {}, {class: "inputselect3"}
+                  %tr
+                    %th
+                      %label コメント
+                    %td
+                      %select
+                        %option 許可しない
+                        %option{selected: "selected"} 許可する
+                  %tr
+                    %th
+                      %label フォロー
+                    %td
+                      %select
+                        %option 許可しない
+                        %option{selected: "selected"} 許可する
+
+              .submit-area
+                = f.submit "本棚の設定を変更する", id: "btn", class: "mode--user-edit"
