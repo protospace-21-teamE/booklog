@@ -17,6 +17,7 @@
       padding-left: 20px;
       float: left;
       text-align: center;
+      position: relative;
       .book-thumbnail {
         width: 170px;
         height: 245px;
@@ -26,6 +27,65 @@
         width: 130px;
         height: 41px;
         margin-bottom: 20px;
+        background-image: url('/assets/archive_button.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        appearance: none;
+      }
+      .write-review-button{
+        width: 130px;
+        height: 41px;
+        margin-bottom: 20px;
+      }
+      .archive-book-button-hidden {
+        position: absolute;
+        font-size: 12px;
+        width: 190px;
+        background-color: #fff;
+        border :5px #4ea6cc solid;
+        top: 300px;
+        left: 40px;
+        display: none;
+        z-index: 99998;
+        li {
+          line-height: 1.4em;
+          padding: 7px 10px;
+          border-bottom:1px #cdcdcd solid;
+          color: #555;
+          font-weight: bold;
+          .reading-status-button {
+            text-align: left;
+            width: 100%;
+            height: 100%;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            appearance: none;
+            color: #555;
+            background-color: #fff;
+            text-indent: -9999px;
+          }
+          p {
+            margin-top: -18px;
+            width: 100%;
+            height:18px;
+          }
+        }
+        li:hover {
+          p {
+            color: #4ea6cc;
+          }
+        }
+        .is-public {
+          background-color :#f0f0f0;
+          font-weight: normal;
+        }
       }
       .sns-button {
         ul {
