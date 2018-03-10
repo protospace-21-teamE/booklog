@@ -1,35 +1,51 @@
 .main-wrapper.clearfix
   .main-navbar
-    %a.main-navbar__link{href: "#"} ブクログ
+    = link_to 'ブクログ', '#', class: 'main-navbar__link'
     >
-    %a.main-navbar__link{href: "#"}
-      = @book.name
-    >
-    teamEさんのホーム
+    = link_to @book.name, '#', class: 'main-navbar__link'
   .main-contents.clearfix
     .contents-left
       .book-wrapper
         .book-profile-wrapper.clearfix
           .book-profile-top.clearfix
             .book-profile-left.clearfix
-              %a{href: '#'}
-                - if @book.image.present?
-                  = image_tag @book.image, class: 'book-thumbnail'
-                - else
-                  = image_tag '/assets/noimage_m.png', class: 'book-thumbnail'
-              = link_to book_reviews_path(@book), method: :post do
-                = image_tag '/assets/archive_button.png',  class: 'archive-book-button'
+              = link_to '#' do
+                = image_tag image_url(@book), class: 'book-thumbnail'
+              - if @review.id.present?
+                = link_to '#' do
+                  = image_tag '/assets/write_review_button.png', class: 'write-review-button'
+              - else
+                = form_for [@book, @review], url: book_reviews_path(@book) do |f|
+                  = f.submit '', class: 'archive-book-button'
+                  %ul.archive-book-button-hidden
+                    %li.is-public
+                      = f.label '公開'
+                      = f.radio_button :is_public, '1', checked: 'checked'
+                      = f.label '非公開'
+                      = f.radio_button :is_public, '0'
+                    %li.reading-status
+                      = f.submit '1', class: 'reading-status-button', name: 'review[reading_status]'
+                      %p 読みたい
+                    %li.reading-status
+                      = f.submit '2', class: 'reading-status-button',name: 'review[reading_status]'
+                      %p 今読んでる
+                    %li.reading-status
+                      = f.submit '3', class: 'reading-status-button', name: 'review[reading_status]'
+                      %p 読み終わった
+                    %li.reading-status
+                      = f.submit '4', class: 'reading-status-button', name: 'review[reading_status]'
+                      %p 積読
               .sns-button
                 %ul
                   %li
-                    %a{href: '#'}
-                      = image_tag '/assets/btn_twitter_circle.png'
+                    = link_to '#' do
+                      = image_tag '/assets/btn_twitter_circle.png', class: 'twitter-button'
                   %li
-                    %a{href: '#'}
-                      = image_tag '/assets/btn_facebook_circle.png'
+                    = link_to '#' do
+                      = image_tag '/assets/btn_facebook_circle.png', class: 'facebook-button'
                   %li
-                    %a{href: '#'}
-                      = image_tag '/assets/btn_hatena_circle.png'
+                    = link_to '#' do
+                      = image_tag '/assets/btn_hatena_circle.png', class: 'hatena-button'
             .book-profile-right.clearfix
               %p.book-title
                 = @book.name
@@ -37,10 +53,7 @@
                 著者：
                 = link_to @book.author.name
               %p.book-about-publish
-                - if @book.released_on.present?
-                  #{@book.publisher}(#{@book.released_date}発売)
-                - else
-                  = @book.publisher
+                #{@book.publisher}#{released_date(@book)}
               .book-rate
                 = image_tag '/assets/unstar.png'
                 = image_tag '/assets/unstar.png'
@@ -63,25 +76,25 @@
                     %span.review-number 100
                     件
               .book-purchase
-                %a{href: @book.amazon_url }
+                = link_to @book.amazon_url do
                   = image_tag '/assets/btn_amazon_detail.png', class: 'amazon-purchase-button'
-                %a{href: '#'}
+                = link_to '#' do
                   = image_tag '/assets/btn_amazon_kindle.png', class: 'kindle-purchase-button'
                 %ul.button-others
                   %li
-                    %a{href: '#'}
+                    = link_to '#' do
                       = image_tag '/assets/btn_honto_logo.png', class: 'button-others'
                   %li
-                    %a{href: '#'}
+                    = link_to '#' do
                       = image_tag '/assets/btn_rakuten_logo.png', class: 'button-others'
                   %li
-                    %a{href: '#'}
+                    = link_to '#' do
                       = image_tag '/assets/btn_bol_logo.png', class: 'button-others'
                   %li
-                    %a{href: '#'}
+                    = link_to '#' do
                       = image_tag '/assets/btn_calil_logo.png', class: 'button-others'
                   %li
-                    %a{href: '#', class: 'other-store-button'}
+                    = link_to '#', class: 'other-store-button' do
                       他の購入ストア
           .book-profile-bottom
             = link_to 'サイトに貼り付ける', '#', class: 'create-embedded-link'
