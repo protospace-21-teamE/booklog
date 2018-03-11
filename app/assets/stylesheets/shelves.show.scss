@@ -54,15 +54,12 @@
                 width: 120px;
                 height: 174px;
                 float: left;
-
                 .user-avatar {
                   width: 91px;
                   border-radius: 10px;
                 }
-
                 .user-nav {
                   height: 72px;
-
                   li {
                     width: 45px;
                     height: 36px;
@@ -73,19 +70,15 @@
                     margin:1px;
                     float: left;
                     text-align: center;
-
                     i {
                       color: #fff;
                       font-size: 25px;
                       line-height: 40px;
                     }
-
                   }
-
                   li:hover {
                     opacity: 0.5;
                   }
-
                 }
               }
               .user-profile-right {
@@ -100,14 +93,12 @@
                     font-size: 24px;
                     float: left;
                   }
-
                   .setting-icon-wrapper {
                     width: 36px;
                     height:25px;
                     background: rgba(216, 216, 216, 0.5);
                     float: right;
                     position: relative;
-
                     .setting-icon {
                       font-size: 1em;
                       width: 16px;
@@ -118,13 +109,10 @@
                       left: 10px;
                       color: #a1a1a1;
                     }
-
                   }
-
                   .setting-icon-wrapper:hover {
                     opacity: 0.3;
                   }
-
                 }
                 .user-shelf {
                   width: 100%;
@@ -134,7 +122,6 @@
                   font-size: 12px;
                   }
                 }
-
                 .user-activity {
                   width: 400px;
                   height: 39px;
@@ -161,7 +148,6 @@
                     float: left;
                   }
                 }
-
                 .user-social {
                   height: 40px;
                   width: 400px;
@@ -200,8 +186,6 @@
           position: relative;
           text-align: center;
           width: 300px;
-          img {
-          }
         }
       }
       &__main-menu {
