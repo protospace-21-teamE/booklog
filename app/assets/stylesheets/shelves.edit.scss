@@ -2,7 +2,7 @@
   &__content {
     &--main {
       .tab-menu {
-        border-bottom: 5px #1e1e1e solid;
+        border-bottom: 5px $mainBlackColor solid;
         height: 35px;
         font-size: 12px;
         margin-top: 25px;
@@ -16,10 +16,10 @@
             position: relative;
             text-align: center;
             a {
-              background-color: #fff;
-              border-top: 1px #cdcdcd solid;
-              border-right: 1px #cdcdcd solid;
-              border-left: 1px #cdcdcd solid;
+              background-color: $mainWhiteColor;
+              border-top: 1px $mainGlayColor solid;
+              border-right: 1px $mainGlayColor solid;
+              border-left: 1px $mainGlayColor solid;
               color: #555;
               display: block;
               min-width: 70px;
@@ -27,17 +27,16 @@
               height: 34px;
             }
             .current {
-              background-color: #1e1e1e;
-              border-top: 1px #1e1e1e solid;
-              border-right: 1px #1e1e1e solid;
-              border-left: 1px #1e1e1e solid;
-              color: #fff;
+              background-color: $mainBlackColor;
+              border-top: 1px $mainBlackColor solid;
+              border-right: 1px $mainBlackColor solid;
+              border-left: 1px $mainBlackColor solid;
+              color: $mainWhiteColor;
             }
           }
         }
       }
       .user-edit-page__form {
-        @include clearfix();
         h2 {
           color: #333;
           font-size: 16px;
@@ -51,13 +50,13 @@
         }
         &__content {
           table {
-            background-color: #fff;
+            background-color: $mainWhiteColor;
             border-top: 5px #333 solid;
             margin: 5px 0 35px;
             width: 100%;
             tbody {
               tr {
-                border-bottom: 1px #cdcdcd solid;
+                border-bottom: 1px $mainGlayColor solid;
                 font-size: 13px;
                 th {
                   background-color: #e8f6f5;
@@ -68,7 +67,6 @@
                   width: 150px;
                 }
                 td {
-                  @include clearfix();
                   padding: 25px;
                   width: 400px;
                   .textarea--shelf-description {
@@ -99,7 +97,7 @@
                     font-size: 13px;
                     margin: 0;
                     .list-style-none--li {
-                      color: #1e1e1e;
+                      color: $mainBlackColor;
                       font-size: 12px;
                       height: 23px;
                       list-style: none;

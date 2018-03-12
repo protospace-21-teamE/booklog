@@ -19,7 +19,7 @@
             %li
               %a 非公開設定
         %p.user-page__content--main--p 本棚に関する情報の設定、本棚の見た目の設定はこちらから行います。
-        .user-edit-page__form
+        .user-edit-page__form.clearfix
           .user-edit-page__form__content
             = form_for [@user, @shelf] do |f|
               %table

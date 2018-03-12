@@ -93,7 +93,7 @@
       .shelf-page__content__main
         .shelf-wrapper
           .shelf-area
-            .shelf-inner
+            .shelf-inner.clearfix
               - if @reviews.present?
                 = render partial: "shelves/review", collection: @reviews
 

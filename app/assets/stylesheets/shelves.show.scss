@@ -1,20 +1,16 @@
 .body-wrapper {
-  @include clearfix();
   background-color: rgb(253,250,237);
   .shelf-page {
-    @include clearfix();
     position: relative;
     width: 100%;
     margin: 0 auto;
     &__content {
-      @include clearfix();
       margin: 0 auto;
       padding: 0;
       position: relative;
       text-align: left;
       width: 100%;
       &__header {
-        @include clearfix();
         height: 250px;
         width: 100%;
         &__left-wrapper {
@@ -31,7 +27,7 @@
               margin: 10px 0;
               overflow: hidden;
               li {
-                color: #a1a1a1;
+                color: $darkGlayColor;
                 font-size: 12px;
                 display: inline;
               }
@@ -39,7 +35,7 @@
           }
           .shelf-page__content__header__left {
             @include clearfix();
-            background-color: #fff;
+            background-color: $mainWhiteColor;
             border-radius: 8px;
             height: 200px;
             float: left;
@@ -71,7 +67,7 @@
                     float: left;
                     text-align: center;
                     i {
-                      color: #fff;
+                      color: $mainWhiteColor;
                       font-size: 25px;
                       line-height: 40px;
                     }
@@ -107,7 +103,7 @@
                       position: absolute;
                       top: 5px;
                       left: 10px;
-                      color: #a1a1a1;
+                      color: $darkGlayColor;
                     }
                   }
                   .setting-icon-wrapper:hover {
@@ -136,7 +132,7 @@
                       font-size: 16px;
                     }
                     p {
-                      color: #a1a1a1;
+                      color: $darkGlayColor;
                     }
                     .number {
                       color: #4ea6cc;
@@ -157,7 +153,7 @@
                     border: 1px #f0f0f0 solid;
                     font-size: 12px;
                     padding: 8px;
-                    color: #cdcdcd;
+                    color: $mainGlayColor;
                     border-radius: 3px;
                     display: inline-block;
                     text-align: center;
@@ -180,7 +176,7 @@
           }
         }
         &__right {
-          background-color: #a1a1a1;
+          background-color: $darkGlayColor;
           float: left;
           height: 250px;
           position: relative;
@@ -189,10 +185,8 @@
         }
       }
       &__main-menu {
-        background-color: #cdcdcd;
+        background-color: $mainGlayColor;
         height: 47px;
-        overflow: hidden;
-        padding: 0 20px;
         top: 60px;
         left: 0;
         width: 100%;
@@ -205,7 +199,6 @@
           min-width: 530px;
           text-align: right;
           margin-right: 20px;
-          padding-right: 20px;
           li {
             display: inline-block;
             padding-left: 2px;
@@ -216,8 +209,8 @@
               font-size: 12px;
             }
             a {
-              background-color: #a1a1a1;
-              color: #fff;
+              background-color: $darkGlayColor;
+              color: $mainWhiteColor;
               display: inline-block;
               font-weight: bold;
               font-size: 11px;
@@ -242,8 +235,8 @@
           }
           .shelf-page__menu-default {
             span {
-              background-color: #a1a1a1;
-              color: #fff;
+              background-color: $darkGlayColor;
+              color: $mainWhiteColor;
               opacity: 0.4;
               height: 27px;
               line-height: 27px;
@@ -296,11 +289,10 @@
             min-height: 675px;
             padding-top: 30px;
             .shelf-inner {
-              @include clearfix();
               display: block;
               margin: auto;
               text-align: center;
-              .book-wrapper {
+              &__book-wrapper {
                 display: table;
                 float: left;
                 height: 225px;
