@@ -1,5 +1,6 @@
 class ShelvesController < ApplicationController
   before_action :set_shelf
+
   def edit
     @user = User.find(params[:user_id])
   end
