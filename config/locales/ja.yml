@@ -1,10 +1,6 @@
 ---
 ja:
   activerecord:
-    attributes:
-      group:
-        name: グループ名
-        user_ids: チャットメンバー
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
@@ -223,3 +219,9 @@ ja:
         home_town: ホームタウン
         avatar: プロフィール画像
         website_url: あなたのウェブサイト
+      shelf:
+        name: 本棚の名前
+        description: 本棚の紹介文
+        mode: 本棚の表示モード
+        design: 本棚のデザイン
+        is_public: 本棚の表示設定

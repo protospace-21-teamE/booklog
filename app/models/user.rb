@@ -14,4 +14,12 @@ class User < ApplicationRecord
   validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
   validates :name, uniqueness: true
+  before_create :build_default_shelf
+
+  private
+  def build_default_shelf
+    build_shelf
+    true
+  end
+
 end

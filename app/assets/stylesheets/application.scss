@@ -1,6 +1,7 @@
 @import "reset";
 @import "font-awesome";
 @import "mixin/clearfix";
+@import "variable";
 @import "header";
 @import "side";
 @import "footer";
@@ -11,4 +12,6 @@
 @import "users.signup";
 @import "users.edit";
 @import "users.show";
+@import "shelves.edit";
+@import "shelves.show";
 @import "books"
