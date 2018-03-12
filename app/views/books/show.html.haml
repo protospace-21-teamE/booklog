@@ -1,0 +1,152 @@
+.main-wrapper.clearfix
+  .main-navbar
+    = link_to 'ブクログ', '#', class: 'main-navbar__link'
+    >
+    = link_to @book.name, '#', class: 'main-navbar__link'
+  .main-contents.clearfix
+    .contents-left
+      .book-wrapper
+        .book-profile-wrapper.clearfix
+          .book-profile-top.clearfix
+            .book-profile-left.clearfix
+              = link_to '#' do
+                = image_tag image_url(@book), class: 'book-thumbnail'
+              - if @review.id.present?
+                = link_to '#' do
+                  = image_tag '/assets/write_review_button.png', class: 'write-review-button'
+              - else
+                = form_for [@book, @review], url: book_reviews_path(@book) do |f|
+                  = f.submit '', class: 'archive-book-button'
+                  %ul.archive-book-button-hidden
+                    %li.is-public
+                      = f.label '公開'
+                      = f.radio_button :is_public, '1', checked: 'checked'
+                      = f.label '非公開'
+                      = f.radio_button :is_public, '0'
+                    %li.reading-status
+                      = f.submit '1', class: 'reading-status-button', name: 'review[reading_status]'
+                      %p 読みたい
+                    %li.reading-status
+                      = f.submit '2', class: 'reading-status-button',name: 'review[reading_status]'
+                      %p 今読んでる
+                    %li.reading-status
+                      = f.submit '3', class: 'reading-status-button', name: 'review[reading_status]'
+                      %p 読み終わった
+                    %li.reading-status
+                      = f.submit '4', class: 'reading-status-button', name: 'review[reading_status]'
+                      %p 積読
+              .sns-button
+                %ul
+                  %li
+                    = link_to '#' do
+                      = image_tag '/assets/btn_twitter_circle.png', class: 'twitter-button'
+                  %li
+                    = link_to '#' do
+                      = image_tag '/assets/btn_facebook_circle.png', class: 'facebook-button'
+                  %li
+                    = link_to '#' do
+                      = image_tag '/assets/btn_hatena_circle.png', class: 'hatena-button'
+            .book-profile-right.clearfix
+              %p.book-title
+                = @book.name
+              %p.book-author
+                著者：
+                = link_to @book.author.name
+              %p.book-about-publish
+                #{@book.publisher}#{released_date(@book)}
+              .book-rate
+                = image_tag '/assets/unstar.png'
+                = image_tag '/assets/unstar.png'
+                = image_tag '/assets/unstar.png'
+                = image_tag '/assets/unstar.png'
+                = image_tag '/assets/unstar.png'
+                .rating
+                  0.00
+                  %i.fa.fa-chevron-circle-down.rating-icon
+              .book-about-number
+                %ul
+                  %li.about-archive
+                    %i.fa.fa-user.user-icon
+                    本棚登録:
+                    %span.archive-number 100
+                    人
+                  %li.about-review
+                    %i.fa.fa-comment.review-icon
+                    レビュー:
+                    %span.review-number 100
+                    件
+              .book-purchase
+                = link_to @book.amazon_url do
+                  = image_tag '/assets/btn_amazon_detail.png', class: 'amazon-purchase-button'
+                = link_to '#' do
+                  = image_tag '/assets/btn_amazon_kindle.png', class: 'kindle-purchase-button'
+                %ul.button-others
+                  %li
+                    = link_to '#' do
+                      = image_tag '/assets/btn_honto_logo.png', class: 'button-others'
+                  %li
+                    = link_to '#' do
+                      = image_tag '/assets/btn_rakuten_logo.png', class: 'button-others'
+                  %li
+                    = link_to '#' do
+                      = image_tag '/assets/btn_bol_logo.png', class: 'button-others'
+                  %li
+                    = link_to '#' do
+                      = image_tag '/assets/btn_calil_logo.png', class: 'button-others'
+                  %li
+                    = link_to '#', class: 'other-store-button' do
+                      他の購入ストア
+          .book-profile-bottom
+            = link_to 'サイトに貼り付ける', '#', class: 'create-embedded-link'
+            %span.ISBN-code
+              \/ISBN・EAN: 9784864032810
+            %span.media-info
+              Amazon.co.jp ・本 (460ページ)
+      %p.reading-status-title
+        #{@book.name}の感想・レビュー・書評
+      .mybooks-by-reading-status
+      .tab-menu.clearfix
+        %ul
+          %li.current 興味グラフ
+          %li.friend-time-line 友だちのタイムライン
+          %li.my-time-line あなたのタイムライン
+      .timeline
+        %ul.timeline-list
+          %li
+            .contents-header
+              .thumbnail-wrapper
+                = image_tag "/assets/prof_noimage_thumbnail"
+              .timeline-notice
+                = link_to 'teamE', "#", class: "user-link"
+                さんが
+                = link_to 'ブクログ', '#', class: "book-link"
+                の
+                = link_to 'レビュー', '#', class: "review-link"
+                を書きました。
+                %span.timestamp
+                  1時間前
+            .contents-body-wrapper
+              .contents-body
+                .body-inner
+                  .book-info.clearfix
+                    = image_tag '/assets/book_example.jpg'
+                    %ul
+                      %li.book-title 何者
+                      %li.book-rate
+                        %span.review-number
+                          1000人が登録
+                        %span.rate
+                          ★5.00
+                      %li.book-detail 著者/ブクログ/ブクログ社/本/2018年3月3日
+                  .review
+                    .review-body 12月15日『王様のブランチ』で紹介されて、面白そうだから予約しました。作家として順調にすすんでいる朝井リョウさんが自身の就活をもとに書いたものと記憶しています。そうしたら今年になって早々に【直木賞】を受賞しました！平成生まれ初！今まで直木賞の作品を読んだことあるかな？と調べたら『蒲田行進曲』『容疑者Xの献身』を映画で見ただけでした。面白かったですよ。福山雅治さんかっこいいし。小説読んでから映画見るとがっかりすることが多いので、人気のある小説は映画ですませてしまいます。でも今回この本を読んでみたら、最初から面白かったし、加速度的に面白くなっていくし。ああ、高く評価される小説ってこんななんだなあって思いました。これからは映画ですませないで、ちゃんと読もうっと。内容はひとことでいえば、「就活すると成長する」とだけにしておきます。彼にはこれからも経験をもとにした作家活動を続けてほしいな。
+                    .review-footer
+                      %p.rate
+                        ★★★★★
+                      = link_to '詳細・コメントする', '#'
+                  .like-wrapper
+                    %a
+                      = image_tag '/assets/like.png'
+                    %span.like-counter
+                      100
+    = render partial: "shared/side"
