@@ -6,13 +6,17 @@ class ShelvesController < ApplicationController
   end
 
   def update
-    @shelf.update(shelf_params)
-    redirect_to edit_user_shelf_path
+    if @shelf.update(shelf_params)
+      redirect_to edit_user_shelf_path
+    else
+      flash.now[:alert] = "本棚の更新ができませんでした"
+      render :edit
+    end
   end
 
   def show
     @user = User.find(params[:user_id])
-    @reviews = Review.where(user_id: params[:user_id]).order("id DESC").includes(:book)
+    @reviews = @user.reviews.order("id DESC").includes(:book)
     render layout: "shelf_show"
   end
 
