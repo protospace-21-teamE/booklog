@@ -2,5 +2,6 @@
   .book-area
     .book-area-image
       .book-image
-        = image_tag image_url(review.book)
+        = link_to edit_book_review_path(review.book, review) do
+          = image_tag image_url(review.book)
     .book-area-buttons
