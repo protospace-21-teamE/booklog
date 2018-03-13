@@ -9,4 +9,8 @@ class BooksController < ApplicationController
     @review = book.reviews.where(user_id: current_user.id).first_or_initialize
   end
 
+  def search
+    @books = Book.where('name LIKE(?)', "%#{params[:name]}%")
+  end
+
 end
