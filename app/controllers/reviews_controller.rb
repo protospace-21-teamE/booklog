@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def create
-    review = Review.new(create_params)
+    review = Review.new(review_create_params)
     review.save
     book = review.book
     redirect_to book_path(book)
