@@ -7,8 +7,8 @@
       = render "shared/profile"
       %p.description teamEさんの本棚の状態や通知を確認できます。
       .contents-search-form.clearfix
-        = form_tag "/" do
-          = text_field_tag :name, '', placeholder: '作品・著者名で検索して本棚登録'
+        = form_tag(search_books_path, method: "get") do
+          = text_field_tag :name, "", placeholder: '作品・著者名で検索して本棚登録'
           = select :books, :name, ["amazon.jp", "amazon.com"]
           = select :books, :name, ["本", "Kindleストア", "洋書", "DVD", "音楽", "ゲーム", "すべての商品"]
           %button.main-search-button
