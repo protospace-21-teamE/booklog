@@ -3,9 +3,11 @@ class ReviewsController < ApplicationController
 
   def create
     review = Review.new(review_create_params)
-    review.save
-    book = review.book
-    redirect_to book_path(book)
+    if review.save
+      redirect_to book_path(review.book)
+    else
+      redirect_to book_path(review.book), alert: "本棚に登録できませんでした"
+    end
   end
 
   def edit
@@ -14,7 +16,7 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_update_params)
-          redirect_to edit_book_review_path
+      redirect_to edit_book_review_path
     else
       flash.now[:alert] = "レビューの更新ができませんでした"
       render :edit
