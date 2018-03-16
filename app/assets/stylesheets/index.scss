@@ -58,6 +58,9 @@ button{
         font-size: 12px;
         margin-bottom: 20px;
       }
+      h1 {
+        font-size: 34px;
+      }
       .contents-search-form {
         background: rgba(78, 166, 204, 0.2);
         margin-bottom: 20px;
@@ -90,6 +93,16 @@ button{
           background-color: black;
         }
       }
+      .contents-search-form__search-page {
+        background-color: inherit;
+        .contents-search-form-description {
+          font-size: 14px;
+          margin: 20px 0;
+        }
+        input {
+          margin-left: 0;
+        }
+      }
       .reading-status-title {
         font-size: 12px;
         margin-bottom: 20px;
@@ -113,18 +126,21 @@ button{
           border:1px #cdcdcd solid;
           padding: 10px;
           background-color: white;
+          margin-right: 5px;
+          min-width: 70px;
+          text-align: center;
         }
-        .current {
+        .current,.all-type {
           background-color: black;
           color: #f0f0f0;
           border: 1px #1e1e1e solid;
         }
-        .friend-time-line:hover {
+        .friend-time-line:hover, .type-paper:hover {
           background-color: #4ea6cc;
           color: #f0f0f0;
         }
 
-        .my-time-line:hover {
+        .my-time-line:hover, .type-kindle:hover {
           background-color: #4ea6cc;
           color: #f0f0f0;
         }
