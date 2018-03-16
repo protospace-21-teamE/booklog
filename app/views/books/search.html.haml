@@ -1,0 +1,40 @@
+.main-wrapper.clearfix
+  .main-navbar
+    %a.main-navbar__link{href: "#"}> ブクログ
+    ＞teamEさんのホーム
+  .main-contents.clearfix
+    .contents-left
+      %h1 本の検索
+      .contents-search-form.contents-search-form__search-page.clearfix
+        = form_tag(search_books_path, method: "get") do
+          = text_field_tag :name, params[:name], placeholder: '作品・著者名で検索して本棚登録'
+          = select :books, :name, ["amazon.jp", "amazon.com"]
+          = select :books, :name, ["本", "Kindleストア", "洋書", "DVD", "音楽", "ゲーム", "すべての商品"]
+          %button.main-search-button
+            %i.fa.fa-search.search-icon
+        %p.contents-search-form-description
+          まずは商品名、著者名、出版社名などを入力して検索してください。
+          %br
+          例えば...
+          %a{href: "#"}> 村上春樹
+          や
+          %a{href: "#"}> 宇多田ヒカル
+          や
+          %a{href: "#"}> ジブリ
+          など。
+      .tab-menu.clearfix
+        %ul
+          %li.all-type すべての本
+          %li.type-paper 紙の本
+          %li.type-kindle Kindle
+      .book-search-list
+        %table
+          %tr.book-search-list-sort
+            %td{colspan: "2"}
+              %ul.clearfix
+                %li.sort-how-to 並び:
+                %li.sort-recommend おすすめ順
+                %li.sort-released-on 発売日順
+          = render partial: "books/book", collection: @books
+    = render "shared/side"
+  = paginate(@books)
