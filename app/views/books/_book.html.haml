@@ -1,0 +1,27 @@
+%tr.book-search-list-item-overview
+  %td{colspan: "2"}
+    %a{href: "", class: "overview-title"} #{book.name}(#{book.publisher})
+    %ul.overview-top
+      %li.overview-review 1001人が登録
+      %li.overview-media-type ★3.79
+      %li.overview-review-body 66 レビュー
+    %ul.overview-bottom
+      %li
+        %a{href: "#"} #{book.author.name} /
+      %li #{book.media_type} /
+      %li #{book.released_on} /
+      %li
+        .fa.fa-amazon Amazon.co.jp
+%tr.book-search-list-main
+  %td.book-search-list-main__item-wrapper
+    = image_tag image_url(book)
+  %td.book-search-list-main__btn-wrapper
+    .archive-item-area
+      - if @book_ids.include?(book.id)
+        = image_tag "/assets/write_review_button_hover.png"
+      - else
+        = form_for @review, url: book_reviews_path(book.id) do |f|
+          = f.hidden_field :user_id, value: current_user.id
+          = f.submit "", class: 'archive-book-button archive-book-button__search-page'
+      .archive-privately-item-area
+        .archive-privately-item-button
