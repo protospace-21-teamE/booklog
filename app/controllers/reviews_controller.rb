@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     if review.save
       redirect_to book_path(review.book)
     else
-      redirect_to book_path(review.book), :alert "本棚に登録できませんでした"
+      redirect_to book_path(review.book), alert: "本棚に登録できませんでした"
     end
   end
 
