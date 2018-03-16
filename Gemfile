@@ -23,6 +23,7 @@ gem 'font-awesome-rails'
 gem 'font-awesome-sass'
 gem 'draper'
 gem 'amazon-ecs'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platform: :mri
