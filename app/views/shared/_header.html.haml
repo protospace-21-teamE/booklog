@@ -28,13 +28,13 @@
         %a{href: "#"}
           %i.fa.fa-clock-o.clock-icon
       .header__navbar__shelf
-        %a{href: "#"}
+        = link_to user_shelf_path(current_user, current_user.shelf) do
           %i.fa.fa-th.shelf-icon
       .header__navbar__home
-        %a{href: "#"}
+        = link_to books_path do
           %i.fa.fa-home.home-icon
       .header__navbar__user-links
-        %a{href: "#"}
+        = link_to user_path(current_user) do
           %img.user-detail{src: "/assets/prof_noimage.gif"}
   .header__notification
     %ul.notification-message-wrapper

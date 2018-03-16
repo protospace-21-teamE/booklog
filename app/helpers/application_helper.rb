@@ -15,5 +15,9 @@ module ApplicationHelper
   def released_on(book)
     book.released_on.present? ? "#{book.released_on.strftime("%Y年%-m月%d日")} /" : ""
   end
+  
+  def review_rate(review)
+    review.rate.present? ? review.rate : 0
+  end
 
 end

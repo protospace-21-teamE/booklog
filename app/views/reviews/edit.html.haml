@@ -1,0 +1,118 @@
+.main-wrapper
+  .main-navbar
+    %ul.site-map__ul
+      %li.site-map__li
+        = link_to '#' do
+          %span ブクログ
+        %span >
+      %li.site-map__ul
+        = link_to '#' do
+          %span
+            = @book.author.name
+        %span >
+      %li.site-map__ul
+        = link_to '#' do
+          %span
+            = @book.name
+        %span >
+      %li.site-map__ul
+        = link_to '#' do
+          %span
+            = @review.user.name
+        %span さんのレビュー >
+      %li.site-map__ul
+        %span 登録情報の編集・削除
+
+  .main-contents.clearfix
+    = render partial: "shared/side_subtype"
+    .contents-left
+      %h1 登録情報の編集・削除
+      .review-edit-page-book-wrapper
+        .review-edit-page-book-wrapper__left
+          = image_tag image_url(@book), class: 'review-edit-page-book-thumbnail'
+          = link_to '再取得', '#'
+        .review-edit-page-book-wrapper__right
+          = @book.name
+          = @book.author.name
+          %ul
+            %li
+              = link_to 'みんなのレビュー', '#', class: 'button--red'
+            %li
+              = link_to 'Amazon.jpで詳細を見る', '#', class: 'button--yellow'
+            %li
+              = link_to 'ブログで紹介', '#', class: 'button--blue'
+      .review-edit-tab-menu
+        %ul.review-edit-tab-menu__list
+          %li.tab-active
+            = link_to 'レビュー', '#'
+          %li.tab
+            = link_to 'フレーズ', '#'
+          %li.tab
+            = link_to '再読記録', '#'
+          %li.tab
+            = link_to '削除', '#'
+      .user-edit-page__form
+        .user-edit-page__form__content
+          = form_for [@book, @review] do |f|
+            %table
+              %tbody
+                %tr
+                  %th
+                    %label 読書状況
+                  %td
+                    = f.radio_button :reading_status, :未設定
+                    = f.label :reading_status, value: :未設定, class: 'reading-status-label'
+                    = f.radio_button :reading_status, :読みたい
+                    = f.label :reading_status, value: :読みたい, class: 'reading-status-label'
+                    = f.radio_button :reading_status, :読み終わった
+                    = f.label :reading_status, value: :読み終わった, class: 'reading-status-label'
+                    = f.radio_button :reading_status, :積読
+                    = f.label :reading_status, value: :積読, class: 'reading-status-label'
+                %tr
+                  %th
+                    %label 評価
+                  %td
+                    = render partial: 'shared/review_rate', locals: {review: @review, f: f}
+                %tr
+                  %th
+                    %label カテゴリ
+                  %td
+                    / = f.select :categories, ['小説', 'エッセイ']
+                %tr
+                  %th
+                    %label レビュー・感想
+                  %td
+                    = f.text_field :body, class: 'inputtext'
+                %tr
+                  %th
+                    %label SNS投稿設定
+                  %td
+                    %i.fa.fa-twitter-square
+                    投稿未設定 設定を変更する
+                    %i.fa.fa-facebook-square
+                    投稿未設定 設定を変更する
+                %tr
+                  %th
+                    %label タグ
+                  %td
+                    %textarea{class: "inputtext", placeholder: "例）ライトノベル SF 少女漫画"}
+                %tr
+                  %th
+                    %label 読了日
+                  %td
+                    = render partial: 'shared/date_select', locals:{f: f, simbol: :read_on}
+                %tr
+                  %th
+                    %label 読書メモ
+                  %td
+                    = f.text_field :comment, class: "inputtext", placeholder: "自分自身のメモ。非公開です"
+                %tr
+                  %th
+                    %label オプション
+                  %td
+                    = f.check_box :is_public
+                    = f.label 'レビューを公開しない'
+            .submit-area
+              = f.submit "レビューを更新する", class: "review-edit-submit-button"
+  %aside.ad-footer
+    .ad-728-90
