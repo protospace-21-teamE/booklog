@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action: :set_review, only: [:edit, :update]
+  before_action :set_review, only: [:edit, :update]
 
   def create
     review = Review.new(review_create_params)
