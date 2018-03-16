@@ -73,12 +73,12 @@
                     %label 評価
                   %td
                     - review_rate(@review).times do |i|
-                      = f.radio_button :rate, i
-                      = f.label :rate, '', value: i, class: 'review-rate-label' do
+                      = f.radio_button :rate, i + 1
+                      = f.label :rate, '', value: i + 1, class: 'review-rate-label' do
                         = image_tag '/assets/star.png'
                     - (5 - review_rate(@review)).times do |i|
-                      = f.radio_button :rate, i + review_rate(@review)
-                      = f.label :rate, '', value: i + review_rate(@review), class: 'review-rate-label' do
+                      = f.radio_button :rate, i + review_rate(@review) + 1
+                      = f.label :rate, '', value: i + review_rate(@review) + 1, class: 'review-rate-label' do
                         = image_tag '/assets/unstar.png'
                 %tr
                   %th
