@@ -52,26 +52,25 @@
       }
       ul {
         padding: 10px 0 10px 20px;
-        li {
+        li, a, .slash {
+          float: left;
           font-size: 12px;
           padding-right: 6px;
         }
-        .overview-media-type {
+        .overview-review-count {
+          color: #da4740;
+          font-weight: bold;
+        }
+        .overview-review-rate {
           color: #f58c29;
           font-weight: bold;
         }
-        .overview-review-body {
+        .overview-review-body-count {
           color: $linkBlueColor;
           font-weight: bold;
         }
         .fa-amazon {
           font-size: 12px;
-        }
-      }
-      .overview-top {
-        .overview-review {
-          color: #da4740;
-          font-weight: bold;
         }
       }
     }
