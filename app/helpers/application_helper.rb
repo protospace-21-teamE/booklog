@@ -8,4 +8,8 @@ module ApplicationHelper
     book.released_on.present? ? released_date = '(' + book.decorate_released_on + '発売)' : released_date = ''
   end
 
+  def review_rate(review)
+    review.rate.present? ? review.rate : 0
+  end
+
 end
