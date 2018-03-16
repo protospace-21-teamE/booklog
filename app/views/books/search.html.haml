@@ -1,7 +1,7 @@
 .main-wrapper.clearfix
   .main-navbar
-    %a.main-navbar__link{href: "#"}> ブクログ
-    ＞teamEさんのホーム
+    = link_to "ブクログ", root_path, class: "main-navbar__link"
+    ＞ キーワードで検索
   .main-contents.clearfix
     .contents-left
       %h1 本の検索
@@ -16,11 +16,11 @@
           まずは商品名、著者名、出版社名などを入力して検索してください。
           %br
           例えば...
-          %a{href: "#"}> 村上春樹
+          = link_to "村上春樹",search_books_path(name: "村上春樹")
           や
-          %a{href: "#"}> 宇多田ヒカル
+          = link_to "宇多田ヒカル", search_books_path(name: "宇多田ヒカル")
           や
-          %a{href: "#"}> ジブリ
+          = link_to "ジブリ", search_books_path(name: "ジブリ")
           など。
       .tab-menu.clearfix
         %ul
@@ -35,6 +35,6 @@
                 %li.sort-how-to 並び:
                 %li.sort-recommend おすすめ順
                 %li.sort-released-on 発売日順
-          = render partial: "books/book", collection: @books
+          = render partial: "book", collection: @books, locals: {book_ids: @book_ids, review: @review}
     = render "shared/side"
   = paginate(@books)
