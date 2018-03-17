@@ -8,9 +8,9 @@
       %p.description teamEさんの本棚の状態や通知を確認できます。
       .contents-search-form.clearfix
         = form_tag(search_books_path, method: "get") do
-          = text_field_tag :name, "", placeholder: '作品・著者名で検索して本棚登録'
-          = select :books, :name, ["amazon.jp", "amazon.com"]
-          = select :books, :name, ["本", "Kindleストア", "洋書", "DVD", "音楽", "ゲーム", "すべての商品"]
+          = text_field :name, "", placeholder: '作品・著者名で検索して本棚登録'
+          = select :books, :name, shop_list
+          = select :books, :name, book_format_list
           %button.main-search-button
             %i.fa.fa-search.search-icon
       %p.reading-status-title 読書状況

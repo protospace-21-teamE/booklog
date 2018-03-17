@@ -8,8 +8,8 @@
       .contents-search-form.contents-search-form__search-page.clearfix
         = form_tag(search_books_path, method: "get") do
           = text_field_tag :name, params[:name], placeholder: '作品・著者名で検索して本棚登録'
-          = select :books, :name, ["amazon.jp", "amazon.com"]
-          = select :books, :name, ["本", "Kindleストア", "洋書", "DVD", "音楽", "ゲーム", "すべての商品"]
+          = select :books, :name, shop_list
+          = select :books, :name, book_format_list
           %button.main-search-button
             %i.fa.fa-search.search-icon
         %p.contents-search-form-description
