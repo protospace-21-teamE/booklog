@@ -1,0 +1,46 @@
+.timeline
+  %ul.timeline-list
+    %li
+      .contents-header
+        .thumbnail-wrapper
+          = image_tag "/assets/prof_noimage_thumbnail"
+        .timeline-notice
+          = link_to review.user.name, user_path(review.user), class: "user-link"
+          さんが
+          = link_to review.book.name, book_path(review.book), class: "book-link"
+          の
+          = link_to 'レビュー', '#', class: "review-link"
+          を書きました。
+          %span.timestamp
+            - if review.updated_at.present?
+              = time_ago_in_words(review.updated_at)
+            - else
+              = time_ago_in_words(review.created_at)
+      .contents-body-wrapper
+        .contents-body
+          .body-inner
+            .book-info.clearfix
+              = image_tag image_url(review.book)
+              %ul
+                %li.book-title
+                  = review.book.name
+                %li.book-rate
+                  %span.review-number
+                    #{Review.where(book_id: review.book.id).count}人が登録
+                  %span.rate
+                    ★#{Review.where(book_id: review.book.id).average(:rate)}
+                %li.book-detail
+                  #{review.book.author.name}/#{review.book.publisher}
+            .review
+              .review-body
+                = review.body
+              .review-footer
+                %p.rate
+                  - review_rate(review).times do
+                    ★
+                = link_to '詳細・コメントする', '#'
+            .like-wrapper
+              %a
+                = image_tag '/assets/like.png'
+              %span.like-counter
+                100
