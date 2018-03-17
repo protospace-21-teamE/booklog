@@ -3,9 +3,9 @@
     = link_to book_path(book), class: "overview-title" do
       #{book.name}(#{book.publisher})
     %ul.overview-top
-      %li.overview-review-count 1001人が登録
-      %li.overview-review-rate ★3.79
-      %li.overview-review-body-count 66 レビュー
+      #{book_reviews_count(book)}
+      #{book_reviews_average(book)}
+      #{book_reviews_body_count(book)}
     %ul.overview-bottom
       %li
       = link_to "#{book.author.name}",search_books_path(name: book.author.name)
