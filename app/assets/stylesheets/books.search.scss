@@ -16,7 +16,7 @@
       }
     }
     .book-search-list-sort {
-      background-color: rgb(232, 246, 255);
+      background-color: #e8f6f5;
       border-bottom: 5px $mainBlackColor solid;
       height: 50px;
       width: 100%;
@@ -85,8 +85,8 @@
           border: none;
           box-shadow: rgba(0, 0, 0, 0.2) -3px 3px 6px 0, rgba(0, 0, 0, 0.2) 3px 3px 6px 0;
           vertical-align: middle;
-          max-height: 170px;
-          max-width: 110px;
+          max-height: 142px;
+          max-width: 100px;
         }
       }
       &__btn-wrapper {
