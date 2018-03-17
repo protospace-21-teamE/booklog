@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   resources :books, only: [:index,:show] do
     resources :reviews, only: [:create, :show, :edit, :update, :destroy]
+    collection do
+      get "search"
+    end
   end
   root "books#index"
 end
