@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update]
 
+  def index
+    @reviews = Review.all.order('created_at DESC')
+  end
+
   def create
     review = Review.new(review_create_params)
     if review.save
