@@ -10,8 +10,8 @@
       %li
       = link_to "#{book.author.name}",search_books_path(name: book.author.name)
       .slash /
-      %li #{media_type(book)}
-      %li #{released_on(book)}
+      #{media_type(book)}
+      #{released_on(book)}
       %li
         .fa.fa-amazon Amazon.co.jp
 %tr.book-search-list-main

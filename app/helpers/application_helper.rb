@@ -9,15 +9,29 @@ module ApplicationHelper
   end
 
   def media_type(book)
-    book.media_type == 0 ? "本 /" : "電子書籍 /"
+    if book.media_type == 0
+      content_tag :li, "本 /"
+    else
+      content_tag :li, "電子書籍 /"
+    end
   end
 
   def released_on(book)
-    book.released_on.present? ? "#{book.released_on.strftime("%Y年%-m月%d日")} /" : ""
+    if book.released_on.present?
+      content_tag :li, "#{book.released_on.strftime("%Y年%-m月%d日")} /"
+    end
   end
-  
+
   def review_rate(review)
     review.rate.present? ? review.rate : 0
+  end
+
+  def shop_list
+    ["amazon.jp", "amazon.com"]
+  end
+
+  def book_format_list
+    ["本", "Kindleストア", "洋書", "DVD", "音楽", "ゲーム", "すべての商品"]
   end
 
 end
