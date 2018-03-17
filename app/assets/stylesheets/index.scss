@@ -159,6 +159,7 @@ button{
 
       .timeline {
         width: 650px;
+        margin-bottom: 20px;
 
         .timeline-list {
           width: 650px;
@@ -176,6 +177,7 @@ button{
                 border: 1px #cdcdcd solid;
                 display: inline-block;
                 border-radius: 3px;
+                float: left;
 
                 img {
                   width: 30px;
@@ -191,6 +193,7 @@ button{
               }
 
               .timeline-notice {
+                width: 580px;
                 height: 32px;
                 margin-left: 10px;
                 font-size: 12px;
@@ -234,11 +237,6 @@ button{
                     ul {
                       float: right;
                       width: 520px;
-                      height: 75px;
-
-                      li {
-                        height: 14px;
-                      }
 
                       .book-title {
                         margin-bottom: 5px;
@@ -291,6 +289,7 @@ button{
 
                       a {
                         font-size: 12px;
+                        line-height: 32px;
                         color: #4ea6cc;
                         display: inline-block;
                         margin-left: 10px;

@@ -1,0 +1,10 @@
+.main-wrapper.clearfix
+  .main-navbar
+    %a.main-navbar__link{href: "#"}> ブクログ
+    ＞新着レビュー一覧
+  .main-contents.clearfix
+    .contents-left
+      = render partial: 'review', collection: @reviews
+    = render "shared/side"
+  %aside.ad-footer
+    .ad-728-90
