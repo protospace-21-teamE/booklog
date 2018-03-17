@@ -12,7 +12,7 @@ class BooksController < ApplicationController
   end
 
   def search
-    @books = Book.where('name LIKE(?)', "%#{params[:name]}%").includes(:author).page(params[:page]).per(NUMBER_OF_BOOKS_PER_PAGE)
+    @books = Book.where('name LIKE(?)', "%#{params[:name]}%").includes(:author, :reviews).page(params[:page]).per(NUMBER_OF_BOOKS_PER_PAGE)
     reviews = Review.where(user_id: current_user.id).includes(:book)
     @book_ids = reviews.group(:book_id).count.keys
     @review = Review.new
